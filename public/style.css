@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel&display=swap");
+
 body {
-  background: rgb(175, 255, 177);
+  background: linear-gradient(
+    292deg,
+    rgb(175, 255, 177),
+    rgb(255, 255, 225),
+    rgb(175, 255, 177)
+  );
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: 15vw;
+  color: white;
+  margin: 0;
 }
