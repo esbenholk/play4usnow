@@ -1,0 +1,405 @@
+@font-face {
+    font-family: "friends"; /*a name to be used later*/
+    src: url("GABRWFFR.TTF"); /*URL to font*/
+}
+/* main layout */
+body {
+    box-sizing: border-box;
+    background: linear-gradient(
+        292deg,
+        rgb(135, 61, 255),
+        rgb(255, 0, 225),
+        rgb(38, 0, 255)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    font-family: "friends";
+    color: white;
+    text-shadow: 1px 2px rgb(38, 0, 255);
+    z-index: 99999999999999999999;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#frame {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+/* general */
+footer a {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 10px;
+    text-decoration: none;
+}
+#message {
+    height: 100px;
+    font-size: 20px;
+    background: Transparent;
+    color: yellow;
+    border: none;
+}
+#message:focus {
+    outline: none;
+}
+#message::placeholder {
+    color: white;
+}
+.input {
+    margin: 20px;
+}
+
+#descriptiontext {
+    color: white;
+    text-align: center;
+}
+/* petitioninformation */
+#subscriber_information {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 100px;
+}
+#submit {
+    width: 90px;
+    height: 90px;
+    background: yellow;
+    border-radius: 50%;
+    font-size: 15px;
+    color: rgb(38, 0, 255);
+    /* text-shadow: 2px 2px rgb(135, 61, 255); */
+    box-shadow: 2px 2px rgb(135, 61, 255);
+}
+#signature {
+    background: #79679b;
+    border: 2px yellow solid;
+    width: 500px;
+    height: 100px;
+    float: left;
+}
+#canvascontainer {
+    width: 600px;
+    height: 100px;
+}
+#secretsignature {
+    display: none;
+}
+/* profile update */
+#updatepage {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+#updatepage li {
+    color: white;
+    list-style: none;
+}
+#updatepage input {
+    background: Transparent;
+    border: none;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+}
+#updatepage input:focus {
+    outline: none;
+}
+#update input::placeholder {
+    color: yellow;
+}
+#updatepage button {
+    margin-top: 20px;
+    background: yellow;
+}
+#license {
+    transform: rotate(10deg);
+    height: 150px;
+}
+
+#fakelicense {
+    transform: rotate(-10deg);
+}
+#fakelicense img {
+    height: 200px;
+}
+#licensename {
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    font-family: "friends";
+    width: 150px;
+    text-shadow: 2px 2px #8dcddc;
+}
+#licenseage {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+}
+#licensemail {
+    position: absolute;
+    top: 90px;
+    left: 170px;
+    width: 150px;
+    font-size: 13px;
+}
+#licensecity {
+    position: absolute;
+    top: 110px;
+    left: 130px;
+    width: 150px;
+    font-size: 13px;
+}
+/* letter and signature  */
+#lettercontainer {
+    margin-top: 25%;
+}
+#staticletter {
+    border-bottom: 2px yellow solid;
+}
+#letter {
+    width: 600px;
+    text-align: justify;
+    color: white;
+    font-family: "friends";
+}
+#lettertext {
+    width: 600px;
+    font-family: "arial";
+}
+#signers {
+    text-align: center;
+    color: white;
+    font-family: "friends";
+}
+.thankyou {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
+.thankyou a {
+    margin-top: 30px;
+    color: white;
+}
+#happyanistongif {
+    text-align: center;
+}
+
+/* ///usermenufunctions */
+#usermenu.on {
+    transform: translateX(0%);
+}
+#usermenu {
+    padding: 5px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(180deg, #f13eec, #01c0ff, #0437ff);
+    border: 2px solid #fff800;
+    transform: translateX(100%);
+    transition-duration: 2s;
+    z-index: 9999999999999;
+}
+#usermenu li {
+    color: white;
+    list-style: none;
+}
+#menucloser {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+}
+#menutrigger {
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+    z-index: 99999999;
+}
+#thumbnail {
+    width: 90%;
+}
+#deletesignaturelink {
+    margin-top: 100px;
+}
+
+/* registrationpage */
+#registrationpage {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+#registrationform {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#coverimage {
+    width: 100%;
+    height: 100%;
+    display: cover;
+}
+#registrationpage input {
+    text-align: center;
+    margin: 4px;
+    background: yellow;
+    width: 100%;
+    z-index: 0;
+}
+#registrationpage button {
+    background: linear-gradient(
+        292deg,
+        rgb(135, 61, 255),
+        rgb(255, 0, 225),
+        rgb(38, 0, 255)
+    );
+    color: white;
+    float: right;
+}
+
+/* loginpage */
+#loginpage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+#loginimage {
+    width: 100%;
+    height: 100%;
+    display: cover;
+}
+#loginform {
+    width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+#loginpage input {
+    text-align: center;
+    margin: 4px;
+    background: yellow;
+    width: 100%;
+    z-index: 0;
+}
+#loginpage button {
+    background: linear-gradient(
+        292deg,
+        rgb(135, 61, 255),
+        rgb(255, 0, 225),
+        rgb(38, 0, 255)
+    );
+    color: white;
+    float: right;
+    border: 2px yellow solid;
+}
+
+/* allsignatures */
+#co-signers {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+co-signer {
+    display: flex;
+    flex-direction: row;
+}
+#avatar {
+    float: left;
+    width: 150px;
+}
+#co-signers a {
+    color: white;
+    text-decoration: none;
+}
+#co-signers li {
+    list-style: none;
+    margin: 10px;
+}
+#city_specific_co_signers {
+    position: absolute;
+    left: 500px;
+    top: 100px;
+
+    color: white;
+    text-decoration: none;
+}
+#city_specific_co_signers li {
+    list-style: none;
+}
+
+#deletesignature-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#shockedaniston {
+    width: 100%;
+    height: 100%;
+    z-index: -100000;
+}
+#deletesignature-page a {
+    text-decoration: none;
+    color: white;
+}
+#deletesignaturetext {
+    position: fixed;
+    top: 35%;
+    color: white;
+}
+#returntothankyou {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    font-family: "friends";
+    height: 75px;
+    background: yellow;
+    border-radius: 40%;
+}
