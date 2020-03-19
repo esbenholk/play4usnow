@@ -15,14 +15,21 @@ app.get("/", (req, res) => {
   databaseActions
     .getSentences()
     .then(accumulatedText => {
-      console.log(accumulatedText.rows);
-      let sentence =
-        accumulatedText.rows[accumulatedText.rows.length - 1].sentence;
-      console.log(sentence);
-      res.render("frontpage", {
-        layout: "main",
-        sentence: sentence
-      });
+      if (accumulatedText.rows > 0) {
+        console.log(accumulatedText.rows);
+        let sentence =
+          accumulatedText.rows[accumulatedText.rows.length - 1].sentence;
+        console.log(sentence);
+        res.render("frontpage", {
+          layout: "main",
+          sentence: sentence
+        });
+      } else {
+        res.render("frontpage", {
+          layout: "main",
+          sentence: "there once was a quarantine..."
+        });
+      }
     })
     .catch(err => console.log("ups didnt get sentence"));
 });
