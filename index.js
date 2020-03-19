@@ -15,8 +15,9 @@ app.get("/", (req, res) => {
   databaseActions
     .getSentences()
     .then(accumulatedText => {
-      if (accumulatedText.rows > 0) {
-        console.log(accumulatedText.rows);
+      console.log(accumulatedText);
+      if (accumulatedText.rows.length > 0) {
+        console.log("there is content in the database", accumulatedText.rows);
         let sentence =
           accumulatedText.rows[accumulatedText.rows.length - 1].sentence;
         console.log(sentence);
