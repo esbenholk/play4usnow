@@ -3,11 +3,14 @@
     "number": {
       "value": 100
     },
+    "color": {
+      "value": "rgb(255,10,255)"
+    },
     "shape": {
       "type": "circle"
     },
     "size": {
-      "value": 10,
+      "value": 50,
       "random": true
     },
     "line_linked": {
@@ -15,7 +18,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 50,
       "direction": "bottom",
       "straight": false
     }
