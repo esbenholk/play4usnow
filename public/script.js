@@ -22,8 +22,7 @@ const particlesJSON = {
         nb_sides: 9
       },
       image: {
-        src:
-          "https://www.stickpng.com/assets/images/5bd08abf7aaafa0575d8502b.png",
+        src: "/virus.png",
         width: 150,
         height: 150
       }

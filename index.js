@@ -15,12 +15,10 @@ app.get("/", (req, res) => {
   databaseActions
     .getSentences()
     .then(accumulatedText => {
-      console.log(accumulatedText);
       if (accumulatedText.rows.length > 0) {
-        console.log("there is content in the database", accumulatedText.rows);
         let sentence =
           accumulatedText.rows[accumulatedText.rows.length - 1].sentence;
-        console.log(sentence);
+        console.log(sentence, "found in database for first load");
         res.render("frontpage", {
           layout: "main",
           sentence: sentence
@@ -35,16 +33,29 @@ app.get("/", (req, res) => {
     .catch(err => console.log("ups didnt get sentence"));
 });
 
+// app.get("/secondpage", (req, res) => {
+//   res.render("secondpage", {
+//     layout: "main",
+//     sentence: "thank you for adding to the chronicles. now wait your turn"
+//   });
+// });
+
 app.post("/sentenceupload", (req, res) => {
   let newSentence = req.body.sentence;
-  console.log("reacting to upload:", newSentence);
+  if (newSentence.length <= 0) {
+    res.render("frontpage", {
+      layout: "main",
+      sentence: "u gotta write something"
+    });
+  }
   databaseActions
     .createSentences(newSentence)
     .then(result => {
       res.render("secondpage", {
         layout: "main",
-        sentence: "thank you for adding to the chronicles. now wait your turn"
+        sentence: "there once was a quarantine..."
       });
+      console.log("sent to database");
     })
     .catch(err => {
       console.log("ups didnt insert sentence");

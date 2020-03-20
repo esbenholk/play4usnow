@@ -36,6 +36,18 @@ h1 {
   text-align: center;
   text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
   z-index: 9999999999;
+  animation: zooming 5s ease 1;
+}
+a {
+  text-decoration: none;
+}
+@keyframes zooming {
+  0% {
+    font-size: 0vw;
+  }
+  100% {
+    font-size: 15vw;
+  }
 }
 
 #particles-js {
@@ -48,9 +60,13 @@ h1 {
   height: 500px;
   z-index: 99999999999999999;
 }
+#submit {
+  width: 500px;
+  z-index: 999999999999999;
+}
 #sentenceuploader {
   width: 100%;
-  z-index: 99999999999999;
+  z-index: 99999999999999999999;
   display: flex;
   flex-direction: column;
   justify-content: center;

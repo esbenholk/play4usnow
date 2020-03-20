@@ -6,7 +6,6 @@ var database = spicedPg(
 
 /////SELECTING TOTAL INFORMATIONS
 module.exports.createSentences = function createSentences(sentence) {
-  console.log("in database.js", sentence);
   return database.query(
     `INSERT INTO chronicles (sentence) VALUES ($1) RETURNING *`,
     [sentence]
