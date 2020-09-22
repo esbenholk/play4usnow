@@ -61,7 +61,11 @@ app.post("/cookies",  (req, res) => {
       res.redirect("/");
     })
     .catch(err => {
-      console.log("ups didnt insert sentence");
+      res.render("cookies", {
+        layout: "main",
+        alert: "you didn't give us the required data",
+        terms: terms
+      });
     });
     
   } else {
