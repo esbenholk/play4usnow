@@ -1,15 +1,9 @@
 
 
-<a href="/firstpage">
-<h1>CORONA <br>CHRONiCLES</h1>
-
-</a>
-
-
-<h1>{{sentence}}</h1>
-<form id="sentenceuploader" action="/sentenceupload" method="POST">
-
-    <input name="sentence" id="sentence" autocomplete="off" placeholder="continue the chronicles"></input>
-    <button type="submit" id="submit" > add to the chronicles</button>
+<form class="data-collector" action="/senddata" method="POST">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <input name="username" id="username" autocomplete="off" placeholder="tell us your username"></input>
+    <button type="submit" id="submit" > SUBMIT</button>
 
 </form>
+

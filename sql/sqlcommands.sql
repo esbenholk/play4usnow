@@ -1,7 +1,11 @@
 
-DROP TABLE IF EXISTS chronicles;
+DROP TABLE IF EXISTS userdata;
 
-CREATE TABLE chronicles(
+CREATE TABLE userdata(
 id SERIAL primary key,
-sentence VARCHAR CHECK (sentence != '')
+username VARCHAR CHECK (username != ''),
+fetish VARCHAR CHECK (fetish != ''),
+age INTEGER,
+lovers INTEGER,
+honesty_level INTEGER
 );
