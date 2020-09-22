@@ -4,7 +4,6 @@ const app = express();
 const cookieSession = require('cookie-session');
 const csurf = require('csurf');
 
-
 const databaseActions = require("./utils/database");
 // const querystring = require("querystring");
 const hb = require("express-handlebars");
@@ -13,6 +12,9 @@ app.set("view engine", "handlebars"); //handlebar is templating language
 app.use(express.static("./views"));
 app.use(express.static("./public"));
 app.use(express.static("./utils"));
+
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 app.use(cookieSession({
   secret: `I'm always angry.`,
@@ -30,31 +32,63 @@ app.use(function(req, res, next) {
   next();
 });  
 
-app.get("/", (req, res) => {
-  // databaseActions
-  //   .getSentences()
-  //   .then(accumulatedText => {
-  //     if (accumulatedText.rows.length > 0) {
-  //       let sentence =
-  //         accumulatedText.rows[accumulatedText.rows.length - 1].sentence;
-  //       console.log(sentence, "found in database for first load");
-  //       res.render("frontpage", {
-  //         layout: "main",
-  //         sentence: sentence
-  //       });
-  //     } else {
-  //       res.render("frontpage", {
-  //         layout: "main",
-  //         sentence: "there once was a quarantine..."
-  //       });
-  //     }
-  //   })
-  //   .catch(err => console.log("ups didnt get sentence"));
-  res.render("frontpage", {
+
+app.get("/cookies", (req, res) => {
+  res.render("cookies", {
     layout: "main",
-    sentence: "there once was a quarantine..."
   });
 });
+
+
+app.post("/cookies",  (req, res) => {
+  console.log("answer to cookies", req);
+  if (req.body.yes == "") {
+      console.log("user said yes");
+      console.log(req.body);
+      res.cookie("authenticated", "true");
+      res.redirect(url);
+  } else {
+      res.send(`<h1>u dont get to see this</h1>`);
+  }
+});
+
+app.use((request, response, next) => {
+  console.log("cookie middleware", request.cookies);
+  if (request.cookies.authenticated != "true") {
+      console.log("access denied");
+      response.redirect("/cookies");
+      response.send();
+      console.log(request.url);
+      return (url = request.url);
+  } else {
+      console.log("access granted");
+      next();
+  }
+});
+
+
+
+app.get("/", (req, res) => {
+  res.render("frontpage", {
+    layout: "main",
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.post("/senddata", (req, res) => {

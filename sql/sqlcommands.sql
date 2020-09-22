@@ -7,5 +7,11 @@ username VARCHAR CHECK (username != ''),
 fetish VARCHAR CHECK (fetish != ''),
 age INTEGER,
 lovers INTEGER,
-honesty_level INTEGER
+honesty_level INTEGER, 
+desires VARCHAR CHECK (desires != ''),
+embarresments VARCHAR CHECK (embarresments != ''),
+first_pet VARCHAR CHECK (firt_pet != ''),
+ejaculations INTEGER,
+gut_feeling INTEGER, 
+
 );
