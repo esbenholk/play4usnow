@@ -10,8 +10,9 @@ lovers INTEGER,
 honesty_level INTEGER, 
 desires VARCHAR CHECK (desires != ''),
 embarresments VARCHAR CHECK (embarresments != ''),
-first_pet VARCHAR CHECK (firt_pet != ''),
+first_pet VARCHAR CHECK (first_pet != ''),
 ejaculations INTEGER,
 gut_feeling INTEGER, 
+preference VARCHAR CHECK (preference != '')
 
 );

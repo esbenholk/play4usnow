@@ -1,3 +1,6 @@
+const terms = require("./public/content/terms.json")[0].terms
+
+
 const express = require("express");
 const app = express();
 
@@ -33,45 +36,69 @@ app.use(function(req, res, next) {
 });  
 
 
+
 app.get("/cookies", (req, res) => {
-  res.render("cookies", {
-    layout: "main",
-  });
+  if (req.cookies.authenticated != "true") {
+      res.render("cookies", {
+        layout: "main",
+        terms: terms
+      });
+  } else {
+    res.redirect("/");
+  }
 });
 
 
 app.post("/cookies",  (req, res) => {
-  console.log("answer to cookies", req);
   if (req.body.yes == "") {
-      console.log("user said yes");
-      console.log(req.body);
+    let username = req.body.username;
+    let age = req.body.age;
+    databaseActions
+    .createUser(username, age)
+    .then(result => {
       res.cookie("authenticated", "true");
-      res.redirect(url);
+      res.cookie("id", result.rows[0].id); 
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log("ups didnt insert sentence");
+    });
+    
   } else {
-      res.send(`<h1>u dont get to see this</h1>`);
+      res.send(`<h1>no data = no fun</h1>`);
   }
 });
 
 app.use((request, response, next) => {
   console.log("cookie middleware", request.cookies);
   if (request.cookies.authenticated != "true") {
-      console.log("access denied");
       response.redirect("/cookies");
       response.send();
-      console.log(request.url);
       return (url = request.url);
   } else {
-      console.log("access granted");
       next();
   }
 });
 
 
 
+
 app.get("/", (req, res) => {
-  res.render("frontpage", {
-    layout: "main",
+  console.log("cookie id", req.cookies);
+  databaseActions
+  .getUser(req.cookies.id)
+  .then(result => {
+    console.log("got user details", result);
+    res.render("frontpage", {
+      layout: "main",
+      name: result.rows[0].username
+    });
+  })
+  .catch(err => {
+    console.log("ups didnt insert sentence");
   });
+ 
+
 });
 
 
@@ -100,18 +127,7 @@ app.post("/senddata", (req, res) => {
       sentence: "u gotta write something"
     });
   }
-  databaseActions
-    .createUser(username)
-    .then(result => {
-      res.render("secondpage", {
-        layout: "main",
-        sentence: "there once was a quarantine..."
-      });
-      console.log("sent to database");
-    })
-    .catch(err => {
-      console.log("ups didnt insert sentence");
-    });
+
 });
 
 app.listen(process.env.PORT || 8080, () => console.log("PLAY4USNOW"));

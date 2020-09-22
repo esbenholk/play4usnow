@@ -1,15 +1,28 @@
 
 
 
+<div class="centerContainer">
 
 
+    <form class="terms centerContainer column" method="POST"> 
+        <p>{{terms}}</p>
 
-<form method="POST"> hej say yes to cookies
-    <input name="username" id="username" autocomplete="off" placeholder="tell us your username"></input>
-    <input type="month"name="age" id="age" autocomplete="off"></input>
+        <div class="row">
+            <p>username</p><input name="username" id="username" autocomplete="off" placeholder="tell us your username"></input>
+        </div>
+          <div class="row">
+            <p>age</p><input type="number"name="age" id="age" autocomplete="off"></input>
 
-  <button name="yes"> SUBMIT </button>
-  <button name="no"> EXIT </button>
-  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        </div>
+        
+         <input type="hidden" name="_csrf" value="{{csrfToken}}">
 
-</form>
+        <div class="row">
+            <button class="exitbutton"name="no"> EXIT </button>
+            <button class="enterbutton" name="yes"> ENTER </button>
+        </div>
+
+    </form>
+
+
+</div>
