@@ -1,29 +1,39 @@
 
 
-
 <div class="centerContainer">
 
 
     <form class="terms centerContainer column" method="POST"> 
         <h1>{{alert}}</h1>
-        <p>{{terms}}</p>
-
-        <div class="row">
-            <p>username</p><input name="username" id="username" autocomplete="off" placeholder="tell us your username"></input>
+        <h2 class="terms-headline">YOU MUST BE OVER 18 AND SUBMIT TO THE TERMS BELOW BEFORE CONTINUING:</h2>
+        <div class="terms-text">   
+             <p>{{{terms}}}</p>
         </div>
-          <div class="row">
-            <p>age</p><input type="number"name="age" id="age" autocomplete="off"></input>
 
+        {{!-- <div class="userdetails">
+            <div class="row">
+                <p class="userdetail">USERNAME</p><input name="username" id="username" autocomplete="off" placeholder="create a username"></input>
+            </div>
+            <div class="row">
+                <p class="userdetail">AGE</p><input type="number"name="age" id="age" autocomplete="off" placeholder="declare your age"></input>
+            </div>
+        </div> --}}
+        <div class="userdetails column">
+               <input name="username" id="username" autocomplete="off" placeholder="CREATE USERNAME"></input>
+                <input type="number"name="age" id="age" autocomplete="off" placeholder="AGE"></input>
         </div>
         
          <input type="hidden" name="_csrf" value="{{csrfToken}}">
 
         <div class="row">
-            <button class="exitbutton"name="no"> EXIT </button>
-            <button class="enterbutton" name="yes"> ENTER </button>
+            <button class="exitbutton"name="no"> exit </button>
+            <button class="enterbutton" name="yes"> SUBMIT TO PLAY4USNOW</button>
         </div>
 
+
+
     </form>
+  
 
 
 </div>

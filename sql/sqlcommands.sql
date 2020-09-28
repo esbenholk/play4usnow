@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS userdata;
 CREATE TABLE userdata(
 id SERIAL primary key,
 username VARCHAR CHECK (username != ''),
+humanity_check VARCHAR,
 fetish VARCHAR CHECK (fetish != ''),
 age INTEGER,
 lovers INTEGER,

@@ -37,8 +37,10 @@ app.use(function(req, res, next) {
 
 
 
+
 app.get("/cookies", (req, res) => {
   if (req.cookies.authenticated != "true") {
+      console.log("cookie isnt authenticated");
       res.render("cookies", {
         layout: "main",
         terms: terms
@@ -48,6 +50,25 @@ app.get("/cookies", (req, res) => {
   }
 });
 
+app.post("/robottest",  (req, res) => {
+ 
+  let humanityCheck = {"question": req.body.question, "answer": req.body.answers } 
+    databaseActions
+    .checkHumanity(humanityCheck, req.cookies.id)
+    .then(result => {
+      console.log(result);
+      res.render("secondpage", {
+        layout: "main",
+        humanityCheck: "okay we trust u",
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+    
+ 
+  console.log("captcha to database now", req.body, req.cookies.id);
+});
 
 app.post("/cookies",  (req, res) => {
   if (req.body.yes == "") {
@@ -74,7 +95,6 @@ app.post("/cookies",  (req, res) => {
 });
 
 app.use((request, response, next) => {
-  console.log("cookie middleware", request.cookies);
   if (request.cookies.authenticated != "true") {
       response.redirect("/cookies");
       response.send();
@@ -83,9 +103,6 @@ app.use((request, response, next) => {
       next();
   }
 });
-
-
-
 
 app.get("/", (req, res) => {
   console.log("cookie id", req.cookies);
@@ -104,6 +121,10 @@ app.get("/", (req, res) => {
  
 
 });
+
+
+
+
 
 
 
