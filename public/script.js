@@ -2,15 +2,17 @@
 
 
 (function() {
+    console.log("token", $('#csrf').val());
+
     let possible  = [
-        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+      
     ]
     let possibleFeeling  = [
         "horny", "sad", "aroused", "focused", "human"
     ]
    let answers = [];
    let counter= 1;
-   let category = ["sexy","2","chat","girl","gay","online","dating","performance","sexw", "cam"]
     
    let recaptchalist = document.getElementsByClassName("recaptcha-grid");
    if(recaptchalist.length>0){
@@ -24,7 +26,6 @@
                image.addEventListener("click", function(ev){
                 answers.push(ev.target.src);
                 ev.target.src = "https://picsum.photos/200/300?random="+counter+"";
-                // ev.target.src= "https://source.unsplash.com/1600x900/?"+category[Math.floor(Math.random()*category.length)] +"";
                 counter ++;
                })
            }

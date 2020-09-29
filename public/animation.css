@@ -1,4 +1,9 @@
 
+#headline_name{
+    width: 100%;
+    text-align: center;
+    top: 0;
+}
 .brasil {
     z-index: 10;
     position: absolute;
@@ -24,7 +29,7 @@
   
   .brasil::before {
     left: 2px;
-      clip: rect(79px, 1200px, 86px, 0);
+    clip: rect(79px, 1200px, 86px, 0);
     text-shadow: -1px 0 red;
     /* background: #000; */
     animation: brasil-anim-2 1s infinite linear alternate-reverse;

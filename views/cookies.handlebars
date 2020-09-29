@@ -10,20 +10,12 @@
              <p>{{{terms}}}</p>
         </div>
 
-        {{!-- <div class="userdetails">
-            <div class="row">
-                <p class="userdetail">USERNAME</p><input name="username" id="username" autocomplete="off" placeholder="create a username"></input>
-            </div>
-            <div class="row">
-                <p class="userdetail">AGE</p><input type="number"name="age" id="age" autocomplete="off" placeholder="declare your age"></input>
-            </div>
-        </div> --}}
         <div class="userdetails column">
                <input name="username" id="username" autocomplete="off" placeholder="CREATE USERNAME"></input>
                 <input type="number"name="age" id="age" autocomplete="off" placeholder="AGE"></input>
         </div>
         
-         <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
 
         <div class="row">
          

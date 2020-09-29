@@ -1,41 +1,56 @@
+///content
 const terms = require("./public/content/terms.json")[0].terms
 const performers = require("./public/content/performers.json")
 const performers2 = require("./public/content/performers2.json")
 
-
+///server-setup
 const express = require("express");
 const app = express();
 
-const cookieSession = require('cookie-session');
-const csurf = require('csurf');
+// var bodyparser = require('body-parser');
+// var urlencodedparser = bodyparser.urlencoded({extended:false})
+// app.use(bodyparser.json());
 
+///database connection
 const databaseActions = require("./utils/database");
-// const querystring = require("querystring");
+
+//handebars as engine
 const hb = require("express-handlebars");
 app.engine("handlebars", hb()); //handlebars is construction languae
 app.set("view engine", "handlebars"); //handlebar is templating language
+
+//public access
 app.use(express.static("./views"));
 app.use(express.static("./public"));
 app.use(express.static("./utils"));
 
+
+///cookie-setup
+const cookieSession = require('cookie-session');
+const csurf = require('csurf');
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
 app.use(cookieSession({
   secret: `I'm always angry.`,
-  maxAge: 1000 * 60 * 60 * 24 * 7 * 6
+  maxAge: 1000 * 60 * 60 * 24 * 7 * 6,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
 }));
 
 app.use(express.urlencoded({
   extended: false
 }));
 
-app.use(csurf()); 
+app.use(csurf({ cookie: false })); 
 
 app.use(function(req, res, next) {
   res.locals.csrfToken = req.csrfToken();
   next();
 });  
+
+
 
 
 
@@ -150,35 +165,11 @@ app.get("/", (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.post("/senddata", (req, res) => {
-  console.log(req.body.username);
-  let username = req.body.username;
-  if (username.length <= 0) {
-    res.render("frontpage", {
-      layout: "main",
-      sentence: "u gotta write something"
-    });
-  }
-
+app.post("/ajax", (req, res) => {
+  console.log("ajax", req.body.answer);
 });
+
+
+
 
 app.listen(process.env.PORT || 8080, () => console.log("PLAY4USNOW"));

@@ -1,18 +1,13 @@
  <p class="header" id="header">we see you {{name}}</p>
+<div id="headline_name" class="brasil" data-text="PLAY 4 US NOW {{name}}">PLAY 4 US NOW {{name}}</div>
 
 
 {{#if captcha}}
     {{>captcha}}
 {{else}}
-    {{#if loader}}
-        {{>logo name=name}}
-    {{else}}
-        {{>header name=name}}
-    {{/if}}
     <div class="frontpage">
 
         <img class="right strip" src="/assets/goddessvanessa.gif">
-
         <div>
             <p>check out our lovely performers and their services</p>
         <div class="row">
@@ -43,7 +38,7 @@
    
 {{/if}} 
 
-{{>popup query="/turnon" headline='NEW FOR' name=name question="what turns you on?" answer1="feet" answer2="humiliation" answer3="control" answer4="your reflection"}}
+{{>popup query="/turnon" headline='NEW FOR' name=name question="what turns you on?" answer1="feet" answer2="humiliation" answer3="control" answer4="your reflection"}}" 
 
 
 
