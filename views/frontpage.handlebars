@@ -1,4 +1,50 @@
+ <p class="header" id="header">we see you {{name}}</p>
 
-<h1>welcome {{name}}</h1>
 
-{{>captcha}}
+{{#if captcha}}
+    {{>captcha}}
+{{else}}
+    {{#if loader}}
+        {{>logo name=name}}
+    {{else}}
+        {{>header name=name}}
+    {{/if}}
+    <div class="frontpage">
+
+        <img class="right strip" src="/assets/goddessvanessa.gif">
+
+        <div>
+            <p>check out our lovely performers and their services</p>
+        <div class="row">
+        <div class="performers column">
+                {{#performers}}
+                    <div class="performer">
+                        <img class="thumbnail"src="/assets/goddessvanessa.gif">
+                        <p>{{name}}{{service}}</p>
+                    </div>
+                {{/performers}}
+        </div>
+        <div class="performers column">
+                {{#performers2}}
+                    <div class="performer">
+                        <img class="thumbnail" src="/assets/goddessvanessa.gif">
+                        <p>{{name}}{{service}}</p>
+                    </div>
+                {{/performers2}}
+        </div>
+        </div>
+        </div>
+
+
+
+        <img class="left strip" src="/assets/goddessvanessa.gif">
+
+    </div>
+   
+{{/if}} 
+
+{{>popup query="/turnon" headline='NEW FOR' name=name question="what turns you on?" answer1="feet" answer2="humiliation" answer3="control" answer4="your reflection"}}
+
+
+
+

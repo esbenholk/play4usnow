@@ -1,0 +1,48 @@
+
+<style>
+
+    .popup{
+        width: 300px;
+        background-color: red;
+        position: fixed;
+        top: 40%;
+        right:20%;
+        border: 3px yellow solid;
+        font-family: Arial, Helvetica, sans-serif;
+        display: none;
+
+    }
+    .button{
+        width: 49%;
+        height: 30px;
+        background-color: aqua;
+        color: blue;
+    }
+    .closePopUp{
+        background-color: grey;
+        position: absolute;
+        top:0;
+        right:0;
+
+    }
+</style>
+<div class="popup" id="popup">
+     <form class="popupform" action="{{query}}" method="POST">
+        <button id="closePopUp" class="closePopUp" value="too shy to answer">X</button>
+        <h1>{{headline}} {{name}}</h1>
+        <h1>{{question}}</h1>
+
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <input type="hidden" id="answers" name="answers" value="array of images">
+      
+       
+        <button class="button"type="submit"> {{answer4}}</button>
+        <button class="button"type="submit"> {{answer3}}</button>
+        <button class="button"type="submit"> {{answer2}}</button>
+        <button class="button"type="submit"> {{answer1}}</button>
+    </form>
+
+</div>
+
+<script src="/popup.js">
+   

@@ -19,6 +19,12 @@ module.exports.checkHumanity = function checkHumanity(humanityCheck, id) {
   );
 };
 
+module.exports.registerTurnOn= function registerTurnOn(turnon, id) {
+  return database.query(
+    `UPDATE userdata SET fetish = $1 WHERE id =$2 RETURNING *`,
+    [turnon, id]  
+  );
+};
 
 
 

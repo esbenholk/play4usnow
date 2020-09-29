@@ -1,4 +1,6 @@
 const terms = require("./public/content/terms.json")[0].terms
+const performers = require("./public/content/performers.json")
+const performers2 = require("./public/content/performers2.json")
 
 
 const express = require("express");
@@ -57,17 +59,28 @@ app.post("/robottest",  (req, res) => {
     .checkHumanity(humanityCheck, req.cookies.id)
     .then(result => {
       console.log(result);
-      res.render("secondpage", {
+      res.redirect("/")
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+app.post("/turnon",  (req, res) => {
+  let turnon =req.body.answers
+    databaseActions
+    .registerTurnOn(turnon, req.cookies.id)
+    .then(result => {
+      res.render("frontpage", {
         layout: "main",
-        humanityCheck: "okay we trust u",
+        name: result.rows[0].username, 
+        captcha: false,
+        performers: performers,
+        performers2: performers2
       });
     })
     .catch(err => {
       console.log(err);
     });
-    
- 
-  console.log("captcha to database now", req.body, req.cookies.id);
 });
 
 app.post("/cookies",  (req, res) => {
@@ -105,15 +118,28 @@ app.use((request, response, next) => {
 });
 
 app.get("/", (req, res) => {
-  console.log("cookie id", req.cookies);
   databaseActions
   .getUser(req.cookies.id)
   .then(result => {
-    console.log("got user details", result);
-    res.render("frontpage", {
-      layout: "main",
-      name: result.rows[0].username
-    });
+    console.log("humanitycheck",result.rows[0].humanity_check);
+    if(result.rows[0].humanity_check){
+      res.render("frontpage", {
+        layout: "main",
+        name: result.rows[0].username, 
+        captcha: false,
+        performers: performers,
+        performers2: performers2,
+        loader: true
+      });
+    } else{
+      res.render("frontpage", {
+        layout: "main",
+        name: result.rows[0].username, 
+        captcha: true
+      });
+
+    }
+  
   })
   .catch(err => {
     console.log("ups didnt insert sentence");

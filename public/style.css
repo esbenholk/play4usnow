@@ -14,13 +14,38 @@ ul,
 li{
   margin:0;
   padding:0;
+
 }
+
 
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@font-face {
+  font-family: 'Tarrget';
+  src: url('/assets/fonts/TarrgetCondensedItalic.woff2') format('woff2'),
+      url('/assets/fonts/TarrgetCondensedItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 
 body{
   background-color: grey;
@@ -32,13 +57,23 @@ main{
   width: 100%;
   height: 100vh;
 }
+.horizontalcenterContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .centerContainer{
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.justify-apart{
+  justify-content: space-between;
 }
 .top{
   position: absolute;
@@ -105,6 +140,8 @@ input::placeholder {
   font-size: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.header,
 .userdetail,
 .terms-headline{
   font-size: 13px;
@@ -213,3 +250,58 @@ input::placeholder {
 
 
 
+
+
+.header{
+  float:right;
+}
+
+.logo{
+  width: 40%;
+  max-width: 700px;
+  min-width: 400px;
+  animation: float ease 10s infinite;
+  
+}
+
+.headline{
+  position: absolute;
+  font-family: 'Tarrget';
+  color: white;
+  text-shadow: 10px 7px 2px rgba(255, 0, 0, 1);
+  font-size: 4em;
+  text-align: center;
+  transform: translateY(-20%);
+  letter-spacing: 0.1em;
+}
+
+
+
+.left,
+.right{
+  transform: rotate(90deg);
+}
+.frontpage{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  padding: 0;
+  margin:0;
+  margin-bottom: 100px;
+
+}
+
+.performer{
+  width: 350px;
+  margin: 10px;
+}
+.thumbnail{
+  width: 100%;
+
+}
+.strip{
+  height: 50px;
+}
