@@ -99,23 +99,36 @@ app.post("/turnon",  (req, res) => {
 });
 
 app.post("/cookies",  (req, res) => {
+
   if (req.body.yes == "") {
     let username = req.body.username;
     let age = req.body.age;
-    databaseActions
-    .createUser(username, age)
-    .then(result => {
-      res.cookie("authenticated", "true");
-      res.cookie("id", result.rows[0].id); 
-      res.redirect("/");
-    })
-    .catch(err => {
+
+    if(age>18){
+        databaseActions
+          .createUser(username, age)
+          .then(result => {
+            res.cookie("authenticated", "true");
+            res.cookie("id", result.rows[0].id); 
+            res.redirect("/");
+          })
+          .catch(err => {
+            res.render("cookies", {
+              layout: "main",
+              alert: "you didn't give us the required data",
+              terms: terms
+            });
+          });
+    
+
+    } else{
       res.render("cookies", {
         layout: "main",
-        alert: "you didn't give us the required data",
+        alert: "you have to be over 18",
         terms: terms
       });
-    });
+    }
+    
     
   } else {
       res.send(`<h1>no data = no fun</h1>`);
@@ -132,28 +145,27 @@ app.use((request, response, next) => {
   }
 });
 
+
+
+
 app.get("/", (req, res) => {
   databaseActions
   .getUser(req.cookies.id)
   .then(result => {
-    console.log("humanitycheck",result.rows[0].humanity_check);
+    let captcha_state = true;
     if(result.rows[0].humanity_check){
-      res.render("frontpage", {
+      captcha_state = false;
+    }
+    
+    res.render("frontpage", {
         layout: "main",
         name: result.rows[0].username, 
-        captcha: false,
+        captcha: captcha_state,
         performers: performers,
         performers2: performers2,
         loader: true
-      });
-    } else{
-      res.render("frontpage", {
-        layout: "main",
-        name: result.rows[0].username, 
-        captcha: true
-      });
-
-    }
+    });
+    
   
   })
   .catch(err => {
@@ -166,7 +178,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/ajax", (req, res) => {
-  console.log("ajax", req.body.answer);
+  console.log("ajax", req.body.question, req.body.answer);
 });
 
 

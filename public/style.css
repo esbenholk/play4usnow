@@ -80,6 +80,11 @@ main{
   top:0;
   left:0;
 }
+.fixed{
+  position: fixed;
+  top:0;
+  left:0;
+}
 .column{
   display: flex;
   flex-direction: column;
@@ -183,6 +188,7 @@ input::placeholder {
 
 
 .recaptcha{
+  z-index: 10;
   background-color: rgb(249, 249, 249);
   font-family: Roboto, sans-serif;
   display: flex;
@@ -245,6 +251,9 @@ input::placeholder {
 }
 .recaptcha-grid img:hover{
   opacity: 0.5;
+}
+.opaque{
+  background-color: red;
 }
 
 
