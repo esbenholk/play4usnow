@@ -1,43 +1,91 @@
 
-<p class="header" id="header">we see you {{name}}</p>
-<div class="headline">PLAY 4 US NOW {{name}}</div>
+
+
+
+
+
 
 <div class="frontpage">
-
-        <img class="right strip" src="/assets/goddessvanessa.gif">
-        <div>
-            <p>check out our lovely performers and their services</p>
-        <div class="row">
-        <div class="performers column">
-                {{#performers}}
-                    <div class="performer">
-                        <img class="thumbnail"src="/assets/goddessvanessa.gif">
-                        <p>{{name}}{{service}}</p>
-                    </div>
-                {{/performers}}
-        </div>
-        <div class="performers column">
-                {{#performers2}}
-                    <div class="performer">
-                        <img class="thumbnail" src="/assets/goddessvanessa.gif">
-                        <p>{{name}}{{service}}</p>
-                    </div>
-                {{/performers2}}
-        </div>
-        </div>
-        </div>
-
-
-
-        <img class="left strip" src="/assets/goddessvanessa.gif">
-
+    <div class="strip">
+     <img class="right strip" src="/assets/goddessvanessa.gif">
     </div>
+
+
+    <div class="main-content">
+        <div class="headline">PLAY 4 US NOW <br>{{name}}</div>
+        <div class="row">
+           <a class="action">
+                <p>  Choose performer</p> 
+               
+           </a>
+            <a class="action pay">
+                <p>  Pay </p> 
+           </a>
+            <a class="action">
+                <p> Sign up to the Dungeun  </p>
+           </a>
+        </div>
+        <div class="row">
+            <div class="performers column">
+                    {{#performers}}
+                        <div class="performer">
+                            <img class="thumbnail"src="/assets/goddessvanessa.gif">
+                            <p>{{name}}{{service}}</p>
+                        </div>
+                    {{/performers}}
+            </div>
+
+            <div class="performers column">
+                    {{#performers2}}
+                        <div class="performer">
+                            <img class="thumbnail" src="/assets/goddessvanessa.gif">
+                            <p>{{name}}{{service}}</p>
+                        </div>
+                    {{/performers2}}
+            </div>
+        </div>
+        <div id="paypal-button-container">
+            <div id="smart-button-container">
+                <div><label for="description">performer </label><input type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
+                     <p id="descriptionError" style="visibility: hidden; color:red;">Please pick a performer</p>
+                <div><label for="amount">tip </label><input name="amountInput" type="number" id="amount" value="" placeholder="10" ><span> EUR</span></div>
+                    <p id="priceLabelError" style="visibility: hidden; color:red;">Please enter a price</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="strip">
+         
+        <img class="left" src="/assets/goddessvanessa.gif">
+        <img src="/assets/logo.webp">
+        <div class="ticker">
+            <div id="headlines1" class="headlines">
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
    
 {{#if captcha}}
     {{>captcha}}
+{{else}}
+    {{!-- {{>popup name=name}} --}}
 {{/if}}
 
-{{>popup query="/turnon" headline='NEW FOR' name=name question="what turns you on?" answer1="feet" answer2="humiliation" answer3="control" answer4="your reflection"}}" 
+
+
+
+
+
+
 
 
 

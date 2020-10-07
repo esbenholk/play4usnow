@@ -81,6 +81,7 @@
             for (let index = 0; index < currentQuery.answers.length; index++) {
                 var textbutton = document.createElement("button");
                 textbutton.setAttribute("type", "submit")
+                textbutton.classList.add("button")
                 textbutton.innerHTML =  currentQuery.answers[index];
                 answers.append(textbutton);
                 textbutton.addEventListener("click", function(ev){
@@ -91,6 +92,7 @@
             for (let index = 0; index < currentQuery.images.length; index++) {
                 var imagebutton = document.createElement("button");
                 imagebutton.setAttribute("type", "submit")
+                imagebutton.classList.add("button")
                 imagebutton.classList.add("imageChoice")
                
                 imagebutton.style.background= `url("${currentQuery.images[index]}")`;

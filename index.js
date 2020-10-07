@@ -104,7 +104,7 @@ app.post("/cookies",  (req, res) => {
     let username = req.body.username;
     let age = req.body.age;
 
-    if(age>18){
+    if(age>17){
         databaseActions
           .createUser(username, age)
           .then(result => {
