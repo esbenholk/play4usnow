@@ -346,18 +346,15 @@ input::placeholder {
 
 #paypal-button-container{
   border-top: 2px white solid;
-  padding: 2em;
-  width: 50%;
   display: flex;
+  background-color: red;
   flex-direction: column;
   justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
-#smart-button-container{
+/* #smart-button-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
-}
-.paypal-buttons.paypal-button img{
-  width: 20px;
-}
+  justify-content: center;
+} */

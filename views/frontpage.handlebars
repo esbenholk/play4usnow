@@ -13,18 +13,7 @@
 
     <div class="main-content">
         <div class="headline">PLAY 4 US NOW <br>{{name}}</div>
-        <div class="row">
-           <a class="action">
-                <p>  Choose performer</p> 
-               
-           </a>
-            <a class="action pay">
-                <p>  Pay </p> 
-           </a>
-            <a class="action">
-                <p> Sign up to the Dungeun  </p>
-           </a>
-        </div>
+   
         <div class="row">
             <div class="performers column">
                     {{#performers}}
@@ -51,6 +40,19 @@
                 <div><label for="amount">tip </label><input name="amountInput" type="number" id="amount" value="" placeholder="10" ><span> EUR</span></div>
                     <p id="priceLabelError" style="visibility: hidden; color:red;">Please enter a price</p>
             </div>
+        </div>
+
+        <div class="row">
+           <a class="action">
+                <p>  Choose performer</p> 
+               
+           </a>
+            <a class="action pay">
+                <p>  Pay </p> 
+           </a>
+            <a class="action">
+                <p> Sign up to the Dungeun  </p>
+           </a>
         </div>
     </div>
 
