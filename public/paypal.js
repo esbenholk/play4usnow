@@ -21,6 +21,7 @@ function initPayPalButton() {
         shape: 'pill',
         size: 'small',
         label: 'pay',
+        height: 25,
         layout: 'horizontal',
         tagline: 'false'
         
@@ -43,15 +44,15 @@ function initPayPalButton() {
 
       onClick: function () {
         if (description.value.length < 1) {
-          descriptionError.style.visibility = "visible";
+          descriptionError.style.display = "block";
         } else {
-          descriptionError.style.visibility = "hidden";
+          descriptionError.style.display = "none";
         }
 
         if (amount.value.length < 1) {
-          priceError.style.visibility = "visible";
+          priceError.style.display = "block";
         } else {
-          priceError.style.visibility = "hidden";
+          priceError.style.display = "none";
         }
 
     

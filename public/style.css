@@ -136,7 +136,7 @@ input{
   color: red;
 }
 input::placeholder {
-  color: white;
+  color: black;
 }
 .terms-text{
   max-height: 200px;
@@ -340,21 +340,61 @@ input::placeholder {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  box-shadow:
+  inset 0 0 50px #fff,      /* inner white */
+  inset -20px 0 80px grey,  /* inner right cyan short */
+
+  inset -20px 0 300px grey, /* inner right cyan broad */        /* outer white */
+  -10px 0 80px rgb(255,0,0)      /* outer left magenta */
+
 }
 
 
 
 #paypal-button-container{
   border-top: 2px white solid;
+  border-bottom: 2px white solid;
   display: flex;
   background-color: red;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   margin-top: 2em;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
+  box-shadow: 0 0 50px #fff;   
+  flex-wrap: wrap;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
-/* #smart-button-container{
+
+#smart-button-container{
   display: flex;
   flex-direction: row;
   justify-content: center;
-} */
+  flex-wrap: nowrap;
+}
+
+#smart-button-container div{
+ margin: 5px;
+ color: white;
+}
+
+.signup-block{
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-block img{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+
+

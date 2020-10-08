@@ -35,25 +35,22 @@
         </div>
         <div id="paypal-button-container">
             <div id="smart-button-container">
-                <div><label for="description">performer </label><input type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
-                     <p id="descriptionError" style="visibility: hidden; color:red;">Please pick a performer</p>
-                <div><label for="amount">tip </label><input name="amountInput" type="number" id="amount" value="" placeholder="10" ><span> EUR</span></div>
-                    <p id="priceLabelError" style="visibility: hidden; color:red;">Please enter a price</p>
+
+                <div><label for="description">PERFORMER </label><input type="text" name="descriptionInput" id="description" maxlength="127" value="">
+                    <p id="descriptionError" style="display: none; color:white;">Please pick a performer</p>
+                </div>
+                <div><label for="amount">TIP </label><input name="amountInput" type="number" id="amount" value="" placeholder="10" ><span> EUR</span>
+                    <p id="priceLabelError" style="display: none; color:white;">Please enter a price</p>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-           <a class="action">
-                <p>  Choose performer</p> 
-               
-           </a>
-            <a class="action pay">
-                <p>  Pay </p> 
-           </a>
-            <a class="action">
-                <p> Sign up to the Dungeun  </p>
-           </a>
+        <div class="signup-block">
+            <img class="background-image" src="/assets/goddessvanessa.gif">
+            {{>signup name=name}}
         </div>
+
+
     </div>
 
     <div class="strip">
@@ -79,7 +76,7 @@
 {{#if captcha}}
     {{>captcha}}
 {{else}}
-    {{!-- {{>popup name=name}} --}}
+    {{>popup name=name}}
 {{/if}}
 
 
