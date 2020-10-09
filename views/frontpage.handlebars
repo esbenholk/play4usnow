@@ -1,8 +1,7 @@
 
-
-
-
-
+{{#if captcha}}
+    {{>captcha}}
+{{else}}
 
 <div class="frontpage">
     <div class="strip">
@@ -31,8 +30,9 @@
             <div class="performers column">
                     {{#performers}}
                         <div class="performer">
-                            <img class="thumbnail"src="/assets/goddessvanessa.gif">
+                            <img class="thumbnail"src="{{url}}">
                             <p>{{name}}{{service}}</p>
+                            {{!-- {{>tips performer_name=name}} --}}
                         </div>
                     {{/performers}}
             </div>
@@ -81,13 +81,12 @@
         </div>
     </div>
 </div>
-
-
-{{#if captcha}}
-    {{>captcha}}
-{{else}}
     {{>popup name=name}}
+
 {{/if}}
+
+
+
 
    
 

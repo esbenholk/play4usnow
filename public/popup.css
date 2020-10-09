@@ -1,37 +1,67 @@
+@-webkit-keyframes argh-my-eyes {
+  0%   { background-color: #fff; }
+  49% { background-color: #fff; }
+  50% { background-color: black;}
+  99% { background-color: black;}
+  100% { background-color: #ff0000; }
+}
+@-moz-keyframes argh-my-eyes {
+  0%   { background-color: #ff0000; }
+  49% { background-color: #ff0000; }
+  50% { background-color: black;}
+  99% { background-color: black;}
+  100% { background-color: #ff0000; }
+}
+@keyframes argh-my-eyes {
+  0%   { background-color: #ff0000; }
+  49% { background-color: #ff0000; }
+  50% { background-color: black;}
+  99% { background-color:  black;}
+  100% { background-color: #ff0000; }
+}
+@font-face {
+  font-family: 'Tarrget';
+  src: url('/assets/fonts/TarrgetCondensedItalic.woff2') format('woff2'),
+      url('/assets/fonts/TarrgetCondensedItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
 
 
 .popup{
   position: fixed;
   display: none;
   z-index: 99999;
+  border: 2px solid black;
   box-shadow:
-          0 0 20px #fff,      
-          -10px 0 20px rgb(255,0,0),        
+          0 0 20px black,           
           10px 0 20px grey;   
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;   
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: auto; 
+  background-size: 100% 100%;
+  min-height: 250px;
 }
 #answers{
   flex-grow: 2;
   display:flex;
  flex-wrap: wrap;
+ padding: 1em;
 }
-#answers a{
-  width: 100%;
-  height: 100%;
-}
-#answers a img{
-  width: 100%;
-  height: 100%;
+#answers img{
+  max-width: 100%;
+  object-fit: contain;
 }
 .button{
   flex-grow: 1;
-  width: 49%;
+  width: 40%;
   height: 30px;
+  background-color: #00ff4c;
+  margin: 0.1em;
 }
 
 
@@ -40,19 +70,45 @@
   position: absolute;
   top:0;
   right:0;
-  width: auto;
-  height: auto;
+  width: 20px;
+  height: 20px;
 }
 .imageChoice{
-  min-height: 200px;
-    background-repeat: no-repeat;
-    background-size: contain;
-
+  height: auto;
 }
 input{
   background-color: white;
   color: black;
+  width: 100%;
+}
+.inputfield-button{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  background-color: red;
+  color: white;
+  font-family: 'Tarrget';
 }
 #popupHeadline{
   text-transform: uppercase;
+  font-size:12px;
+  line-height: 20px;
+  height: 20px;
+  -webkit-animation: argh-my-eyes 0.5s infinite;
+  -moz-animation:    argh-my-eyes 0.5s infinite;
+  animation:         argh-my-eyes 0.5s infinite;
+  color: #00ff4c;
+}
+#question{
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+#descriptiontext{
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
 }

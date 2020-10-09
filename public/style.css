@@ -401,6 +401,10 @@ input::placeholder {
  margin: 5px;
  color: white;
 }
+#smart-button-container div label{
+  color: white;
+  font-family: 'Tarrget';
+ }
 
 .signup-block{
   position: relative;
@@ -447,6 +451,9 @@ input::placeholder {
   font-size: 12px;
   margin:2em;
   max-width: 25%;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  padding: 10px;
 }
 .payment_description.right{
   text-align: right;

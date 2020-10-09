@@ -5,47 +5,80 @@
         {
             question: "are you ready?",
             headline: "new for",
+            description: "",
             answers: ["almost", "never", "oh boy am i", "i still dont know what this is"],
             images: [],
             inputfield: false,
-            link: []
+            link: [],
+            url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
+
         },
         {
-            question: "what do you like?",
+            question: "choose your favorite",
             headline: "ALERT ALERT ALERT",
+            description: "",
             answers: [],
             images: ["https://www.tutonaut.de/wp-content/uploads/2019/02/Glitch.jpg", "https://i.imgur.com/rLPAkoQ.jpg"],
             inputfield: false,
-            link: []
-        },
-        {
-            question: "are you honest?",
-            headline: "singles in your area are looking to meet you",
-            answers: [],
-            images: [],
-            inputfield: true,
-            link: []
+            link: [],
+            url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
+
         },
         {
             question: "",
-            headline: "HYDRA BERLIN",
+            headline: "singles in your area are looking to meet you",
+            description: "tell them something about yourself!",
+            answers: [],
+            images: [],
+            inputfield: true,
+            link: [],
+            url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
+
+        },
+        {
+            question: "",
+            headline: "VISIT HYDRA BERLIN",
+            description: "",
             answers: [],
             images: [],
             inputfield: false,
-            link: ["https://www.hydra-berlin.de/beratungsstelle/informationen/bibliothek/", "https://www.hydra-berlin.de/fileadmin/_processed_/csm_16-100_de7212bcde.jpg"]
+            link: ["https://www.hydra-berlin.de/beratungsstelle/informationen/bibliothek/", "https://www.hydra-berlin.de/fileadmin/_processed_/csm_16-100_de7212bcde.jpg"],
+            url : "",
+        },
+        {
+            question: "Are you ready to play a dangerous game?",
+            headline: "Welcome",
+            description: "",
+            answers: ["Danger Turns Me On",
+                "Get Me Out Of Here"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://thumbs.gfycat.com/AthleticSimpleHuemul-size_restricted.gif",
+        },
+        {
+            question: "",
+            headline: "",
+            description: "For the hottest user experience, tell us about yourself. Are you a:",
+            answers: ["Dominant",
+                "Submissive",
+                "Masochist",
+                "Sadist",
+                "Fetishist",
+               " Vanilla Sundae"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://64.media.tumblr.com/5710cff53f63ee210f0d922b9b8948d5/tumblr_pa386bxJTg1ri4zv1o1_540.gifv",
+            color: ["pink", "white"]
         }
+        
     ]
  
-    let colors = ["red","grey","white", "black", "yellow", "#e04ac7", "#00ff19" ,"#d6d6d6"]
-    let backgroundImages = [
-        "https://media1.popsugar-assets.com/files/thumbor/TNoODquMD1Bd-GEci5ay6T-KZw0/0x0:1776x1776/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2019/10/16/910/n/1922398/3639bd7c5da782e4e78631.68367395_/i/Sexy-Kim-Kardashian-Pictures-2019.jpg",
-        "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
-        "https://slm-assets.secondlife.com/assets/5806063/view_large/Snapshot_026_G.jpg?1340715470",
-        "https://nwn.blogs.com/.a/6a00d8341bf74053ef0120a85e13b7970b-600wi",
-        "https://media.istockphoto.com/photos/portrait-of-a-woman-picture-id961384258?k=6&m=961384258&s=612x612&w=0&h=uUOAxJPioYavXM7XLyxU7IQ9ykVZungPoZhVNJQMyac="
-    ]
-    let backgroundImageChoice = [true, false]
-
+    let colors = ["red","white", "#e04ac7", "#00ff19"]
+  
     setTimeout(showPopUp, 0);
 
     let answer = "";
@@ -67,15 +100,22 @@
        
         var question = document.getElementById("question");
         var headline = document.getElementById("popupHeadline");
+        var description = document.getElementById("descriptiontext");
         var answers = document.getElementById("answers");
         answers.innerHTML = "";
+        description.innerHTML = "";
+        headline.innerHTML = "";
+        question.innerHTML = "";
        
         let currentQueryIndex = Math.floor(Math.random()*queries.length);
         let currentQuery = queries[currentQueryIndex];
         queries.splice( currentQueryIndex, 1);
 
         question.innerHTML = currentQuery.question;
-        headline.innerHTML = currentQuery.headline + ", " + capitalizeFirstLetter(name);
+        if(currentQuery.headline){
+            headline.innerHTML = currentQuery.headline + ", " + capitalizeFirstLetter(name);
+        }
+        description.innerHTML = currentQuery.description
   
         if(currentQuery.answers.length>0){
             for (let index = 0; index < currentQuery.answers.length; index++) {
@@ -87,6 +127,9 @@
                 textbutton.addEventListener("click", function(ev){
                     answer = ev.target.innerHTML;
                 })
+                if(currentQuery.color){
+                    styling(textbutton, currentQuery.color);
+                }
             }
         } else if (currentQuery.images.length>0){  
             for (let index = 0; index < currentQuery.images.length; index++) {
@@ -95,8 +138,10 @@
                 imagebutton.classList.add("button")
                 imagebutton.classList.add("imageChoice")
                
-                imagebutton.style.background= `url("${currentQuery.images[index]}")`;
-                
+                let image = document.createElement("img");
+                image.src = currentQuery.images[index]
+                // imagebutton.style.background= `url("${currentQuery.images[index]}")`;
+                imagebutton.append(image); 
                 answers.append(imagebutton);
                 imagebutton.addEventListener("click", function(ev){
                     answer = currentQuery.images[index];
@@ -109,6 +154,7 @@
             answers.appendChild(inputfield);
             var button = document.createElement("button");
             button.setAttribute("type", "submit")
+            button.classList.add("inputfield-button")
             button.innerHTML =  "submit"
             answers.append(button);
             button.addEventListener("click", function(ev){
@@ -120,6 +166,10 @@
             answers.innerHTML = `<a href="${currentQuery.link[0]}"><img src="${currentQuery.link[1]}"/></a>`;
         }
 
+        if(currentQuery.color){
+            styling(description, currentQuery.color);
+        }
+
 
 
 
@@ -128,61 +178,60 @@
         csurf_hiddenInput.setAttribute("value", $('meta[name="_csrf"]').attr('content'))
 
 
-        randomStyling(form, headline, question, answers);
+        randomStyling(form, headline, question, answers, currentQuery.url);
 
         form.style.display = "block"
         document.body.append(form);
 
     }
+    function styling(element, color){
+        element.style.backgroundColor = color[0];
+        element.style.color = color[1];
+        element.style.border = `2px solid ("${color[1]}")`;
+    }
 
-    function randomStyling(form, headline, question, answers){
-        let windowWidth = window.innerWidth
-        let maxWidth = windowWidth*0.80;
-        let minWidth = windowWidth*0.50
-        if(windowWidth>720){
-            maxWidth = windowWidth*0.50;
-            minWidth = windowWidth*0.10
+    function randomStyling(form, headline, question, answers, background){
+    
+        let windowHeight = window.innerHeight;
+        let windowWidth = window.innerWidth;
+        console.log(windowHeight-500, getRandomNumberBetween(0, 145));
+
+        if(window.innerWidth>750){
+            form.style.width = 500 +"px"
+            form.style.height = "auto"
+            form.style.top = getRandomNumberBetween(0,windowHeight-500) +"px";
+            form.style.left = getRandomNumberBetween(0,windowWidth-500)+"px";
+        } else{
+            form.style.width = 300 +"px"
+            form.style.height = 300 +"px"
+            form.style.top = getRandomNumberBetween(0,windowHeight-300) +"px";
+            form.style.left = getRandomNumberBetween(0,windowWidth-300)+"px";
+            form.style.top = 0;
+            form.style.left =0;
         }
-        let width = Math.random() * (maxWidth - minWidth) + minWidth;
 
-        let windowHeight = window.innerHeight
-        let maxHeight = windowHeight*0.60;
-        let minHeight = windowHeight*0.50
-
-        let height = Math.random() * (maxHeight- minHeight) + minHeight;
-        
-        form.style.width = width + "px";
-        form.style.height = height + "px";
-
-        let mainColor = pickColor(colors);
         let backgroundColor = pickColor(colors);
-        if(backgroundColor === mainColor){
-            backgroundColor = pickColor(colors);
-        }
         form.style.backgroundColor = backgroundColor;
-        form.style.border = `3px solid ${mainColor}`
-        headline.style.color = mainColor;
-        question.style.color = pickColor(colors);
- 
-        form.style.top = Math.random() * ((windowHeight-height) -0) + 0 + "px";
-        form.style.left = Math.random() * ((windowWidth - width) -0) + 0 + "px";
-
-
-        function pickColor(colors){
-            let index = Math.floor(Math.random() * colors.length);
-            let color = colors[index]
-            queries.splice( index, 1);
-            return color
+    
+        if(background.length > 1){
+            form.style.background= `url("${background}")`;
         }
-        if(backgroundImageChoice[Math.floor(Math.random() * backgroundImageChoice.length)]){
-            form.style.background= `url("${backgroundImages[Math.floor(Math.random() * backgroundImages.length)]}") no-repeat`;
-        }
+       
     }
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
+    function getRandomNumberBetween(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    function pickColor(colors){
+        let index = Math.floor(Math.random() * colors.length);
+        let color = colors[index]
+        queries.splice( index, 1);
+        return color
+    }
+  
 
 
     $("#popup").submit(function(e) {
