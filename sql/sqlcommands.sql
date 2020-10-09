@@ -18,7 +18,7 @@ CREATE TABLE userdata(
     performer7 INTEGER, 
     performer8 INTEGER, 
     performer9 INTEGER, 
-    global INTEGER
+    global INTEGER, 
 
     performer_choice VARCHAR, 
     fetish VARCHAR CHECK (fetish != ''),
