@@ -1,21 +1,8 @@
 
 
-<head>
-    <meta name='_csrf', content='{{csrfToken}}'>
-</head>
 
 
-{{#if captcha}}
-    {{>captcha}}
-{{else}}
-    <form class="popup" id="popup"  method="POST">
-        <button id="closePopUp" class="closePopUp" value="too shy to answer">X</button>
-        <p id="name" style="display:none">{{name}}</p>
-        <h1 id="popupHeadline"></h1>
-        <h1 id="question"></h1>
-        <div id="answers"></div>
-    </form>
-{{/if}}
+
 
 <div class="frontpage">
     <div class="strip">
@@ -96,10 +83,14 @@
 </div>
 
 
+{{#if captcha}}
+    {{>captcha}}
+{{else}}
+    {{>popup name=name}}
+{{/if}}
 
    
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/popup.js">
+
 
 
 
