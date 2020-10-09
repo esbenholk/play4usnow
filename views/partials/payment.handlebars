@@ -1,0 +1,70 @@
+<head>
+    <meta name='_csrf', content='{{csrfToken}}'>
+</head>
+
+
+
+<div id="paypal-button-container">
+        	<h1 class="step-headline">PAY NOW 4 ACCESS TO OUR PERFORMANCES</h1>
+            <div class="row">
+                <p class="payment_description left">
+                    PRE-PAY DISCOUNT<br>
+                    10 EURO Admission <br>
+                    Pay discounted admission fee with PayPal to ensure access to a scheduled breakout room with a performer of your choice. <br>
+                    We know what usernames paid for what -> when you enter the Digital Dungeon be sure to submit as your own username. <br>
+                    Choose a performer and input 10 Euro as tip <br>
+                    If you pay with your PayPal app please be sure to annotate your username and choice of performer to service@play4usnow.com
+
+                    <br>
+                    NOTE: Having paid for a full service in whole allows garanteed access to a breakout room with your performer. If you dont buy any service, or tip any performer, you will not be able to exit the free level of the digital dungeon.  
+                </p>
+                <p class="payment_description center">
+                    IN-SHOW TICKETING <br>
+                    20 EURO Admission <br>
+                    Pay full admission fee with PayPal to obtain access to the breakout rooms announced during the Digital Dungeon Opening Hours. <br>
+                    -> when you enter the Digital Dungeon, the PLAY4USNOW hosts will announce avaible rooms to submit to. <br>
+                    Choose a performer and input 20 Euro as tip <br>
+                    If you pay with your PayPal app please be sure to annotate your username and choice of performer to service@play4usnow.com
+
+                    <br>
+                    NOTE: It is not garanteed that there are performers available. 
+                </p>
+                 <p class="payment_description right">
+                    PAY TOGETHER <br>
+                    tip bucket<br>
+                    Pool your money with other users by tipping any amount. If the tip bucket of a performer reaches the goal amount, all contributors to the bucket will be granted access to the performance! <br>
+                    -> when you enter the Digital Dungeon, the PLAY4USNOW hosts will announce what tip buckets to submit to. <br>
+                    
+                    Choose a performer and input desired tip <br>
+                    If you pay with your PayPal app please be sure to annotate your username and choice of performer to service@play4usnow.com
+
+                    <br>
+                    NOTE: This option does not guarantee admission if the goal is not reached.
+                </p>
+            </div>
+
+
+
+            <div id="smart-button-container">
+
+                <div class="column"><label for="description">CHOOSE A PERFORMER </label>
+                <select name="descriptionInput" id="description" class="performerchoice" value="">
+                            <option value="performer1">Vanessa1</option>
+                            <option value="performer2">Vanessa2</option>
+                            <option value="performer3">Vanessa3</option>
+                            <option value="performer4">Vanessa4</option>
+                            <option value="performer5">Vanessa5</option>
+                            <option value="performer6">Vanessa6</option>
+                            <option value="performer7">Vanessa7</option>
+                            <option value="performer8">Vanessa8</option>
+                            <option value="performer9">Vanessa9</option>
+                            <option value="global">global</option>
+                </select>
+                {{!-- <input type="text" name="descriptionInput" id="description" maxlength="127" value=""> --}}
+                    <p id="descriptionError" style="display: none; color:white;">Please pick a performer</p>
+                </div>
+                <div class="column"><label for="amount">& TIP THEM in <span> EUR</span></label><input name="amountInput" type="number" class="tips"id="amount" value="" placeholder="TIP" >
+                    <p id="priceLabelError" style="display: none; color:white;">Please enter a price</p>
+                </div>
+            </div>
+</div>

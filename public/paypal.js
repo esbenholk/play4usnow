@@ -59,6 +59,10 @@ function initPayPalButton() {
         purchase_units[0].description = description.value;
         purchase_units[0].amount.value = amount.value;
 
+       
+
+
+
       },
 
       createOrder: function (data, actions) {
@@ -70,6 +74,8 @@ function initPayPalButton() {
       onApprove: function (data, actions) {
         return actions.order.capture().then(function (details) {
           alert('Transaction completed by ' + details.payer.name.given_name + '!');
+
+          updateUser(details, description.value, amount.value)
         });
       },
 
@@ -86,3 +92,17 @@ function initPayPalButton() {
 
 
   initPayPalButton();
+
+
+  function updateUser(details, description, amount){
+
+    $.post("/payment",{
+      amount: amount, 
+      performer: description,  
+      paypal_username: details.payer.name.given_name + " " +details.payer.name.surname,
+      _csrf : $('meta[name="_csrf"]').attr('content')
+    }, function(data){
+      console.log(data);
+   
+    });
+  }

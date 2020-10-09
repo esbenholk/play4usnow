@@ -3,7 +3,11 @@
 
 
 
-
+{{#if captcha}}
+    {{>captcha}}
+{{else}}
+    {{!-- {{>popup name=name}} --}}
+{{/if}}
 
 <div class="frontpage">
     <div class="strip">
@@ -14,7 +18,7 @@
     <div class="main-content">
         <div class="headline">PLAY 4 US NOW <br>{{name}}</div>
    
-        <div class="row">
+        <div class="row changing_to_column">
             <div class="performers column">
                     {{#performers}}
                         <div class="performer">
@@ -33,24 +37,32 @@
                     {{/performers2}}
             </div>
         </div>
-        <div id="paypal-button-container">
-            <div id="smart-button-container">
 
-                <div><label for="description">PERFORMER </label><input type="text" name="descriptionInput" id="description" maxlength="127" value="">
-                    <p id="descriptionError" style="display: none; color:white;">Please pick a performer</p>
-                </div>
-                <div><label for="amount">TIP </label><input name="amountInput" type="number" id="amount" value="" placeholder="10" ><span> EUR</span>
-                    <p id="priceLabelError" style="display: none; color:white;">Please enter a price</p>
-                </div>
-            </div>
+         <div class="row">
+           <a class="action">
+                <p>BROWSE</p> 
+           </a>
+            <a class="action">
+                <p> SUBMIT</p>
+           </a>
+            <a class="action pay">
+                <p> PAY</p> 
+           </a>
+         
         </div>
-
         <div class="signup-block">
-            <img class="background-image" src="/assets/goddessvanessa.gif">
+            <img class="background-image" src="/assets/sexy.png">
             {{>signup name=name}}
         </div>
+      
 
+        <div class="payment">
+            {{>payment name=name}}
+        </div>
 
+      
+
+       
     </div>
 
     <div class="strip">
@@ -73,11 +85,7 @@
 
 
    
-{{#if captcha}}
-    {{>captcha}}
-{{else}}
-    {{>popup name=name}}
-{{/if}}
+
 
 
 
