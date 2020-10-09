@@ -6,7 +6,7 @@
 {{#if captcha}}
     {{>captcha}}
 {{else}}
-    {{!-- {{>popup name=name}} --}}
+    {{>popup name=name}}
 {{/if}}
 
 <div class="frontpage">
@@ -17,8 +17,22 @@
 
     <div class="main-content">
         <div class="headline">PLAY 4 US NOW <br>{{name}}</div>
+
+        <div class="row frontpage-div">
+           <a class="action">
+                <p>BROWSE</p> 
+           </a>
+            <a class="action">
+                <p> SUBMIT</p>
+           </a>
+            <a class="action pay">
+                <p> PAY</p> 
+           </a>
+         
+        </div>
    
-        <div class="row changing_to_column">
+
+        <div class="row changing_to_column performers">
             <div class="performers column">
                     {{#performers}}
                         <div class="performer">
@@ -38,18 +52,7 @@
             </div>
         </div>
 
-         <div class="row">
-           <a class="action">
-                <p>BROWSE</p> 
-           </a>
-            <a class="action">
-                <p> SUBMIT</p>
-           </a>
-            <a class="action pay">
-                <p> PAY</p> 
-           </a>
-         
-        </div>
+       
         <div class="signup-block">
             <img class="background-image" src="/assets/sexy.png">
             {{>signup name=name}}
@@ -59,6 +62,8 @@
         <div class="payment">
             {{>payment name=name}}
         </div>
+
+  
 
       
 
