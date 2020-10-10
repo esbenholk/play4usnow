@@ -4,9 +4,10 @@ DROP TABLE IF EXISTS userdata;
 CREATE TABLE userdata(
 
     id SERIAL primary key,
-    username VARCHAR CHECK (username != ''),
+    username VARCHAR,
     humanity_check VARCHAR,
     age INTEGER,
+    email VARCHAR,
     name VARCHAR, 
     has_tipped_performer VARCHAR,
     performer1 INTEGER, 
@@ -19,6 +20,17 @@ CREATE TABLE userdata(
     performer8 INTEGER, 
     performer9 INTEGER, 
     global INTEGER, 
+
+    readiness VARCHAR, 
+    what_you_want_singles_to_know VARCHAR,
+    feelings_towards_danger VARCHAR,
+    sex_role VARCHAR,
+
+
+
+
+
+
 
     performer_choice VARCHAR, 
     fetish VARCHAR CHECK (fetish != ''),

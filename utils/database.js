@@ -4,6 +4,11 @@ var database = spicedPg(
     "postgres:postgres:postgres@localhost:5432/userdata"
 );
 
+/////get userdata from ID. 
+module.exports.getUser= function getUser(id) {
+  return database.query(`SELECT * FROM userdata WHERE id=$1`, [id]);
+};
+
 /////CREATING USERNAME AND ID
 module.exports.createUser = function createUser(username, age) {
   return database.query(
@@ -12,12 +17,39 @@ module.exports.createUser = function createUser(username, age) {
   );
 };
 
+////recaptcha query 
 module.exports.checkHumanity = function checkHumanity(humanityCheck, id) {
   return database.query(
     `UPDATE userdata SET humanity_check = $1 WHERE id =$2 RETURNING *`,
     [humanityCheck, id]  
   );
 };
+
+
+module.exports.dynamicUpdate = function dynamicUpdate(column, value, id) {
+  return database.query(
+    `UPDATE userdata SET `+  column + ` =  ` + value + ` WHERE id =$1 RETURNING *`,
+    [id]  
+  );
+};
+module.exports.dynamicTip = function dynamicTip(performer, tip, id) {
+  return database.query(
+    `UPDATE userdata SET `+  performer + ` =  ` + tip + ` WHERE id =$1 RETURNING *`,
+    [id]  
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports.updatePaymentStatus= function updatePaymentStatus(has_tipped, real_name, id) {
   return database.query(
@@ -82,6 +114,10 @@ module.exports.tipPerformer9= function tipPerformer9(amount, id) {
 
 
 
+
+
+
+
 module.exports.registerTurnOn= function registerTurnOn(turnon, id) {
   return database.query(
     `UPDATE userdata SET fetish = $1 WHERE id =$2 RETURNING *`,
@@ -91,6 +127,4 @@ module.exports.registerTurnOn= function registerTurnOn(turnon, id) {
 
 
 
-module.exports.getUser= function getUser(id) {
-  return database.query(`SELECT * FROM userdata WHERE id=$1`, [id]);
-};
+

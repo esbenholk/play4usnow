@@ -12,6 +12,7 @@ function initPayPalButton() {
     purchase_units[0].amount = {};
 
     function validate(event) {
+
       return event.value.length > 0;
     }
 
@@ -89,13 +90,9 @@ function initPayPalButton() {
   }
 
 
-
-
   initPayPalButton();
 
-
   function updateUser(details, description, amount){
-
     $.post("/payment",{
       amount: amount, 
       performer: description,  

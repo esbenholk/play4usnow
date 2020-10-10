@@ -4,6 +4,7 @@
     let queries = [
         {
             question: "are you ready?",
+            questionID:"readiness", 
             headline: "new for",
             description: "",
             answers: ["almost", "never", "oh boy am i", "i still dont know what this is"],
@@ -13,19 +14,21 @@
             url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
 
         },
-        {
-            question: "choose your favorite",
-            headline: "ALERT ALERT ALERT",
-            description: "",
-            answers: [],
-            images: ["https://www.tutonaut.de/wp-content/uploads/2019/02/Glitch.jpg", "https://i.imgur.com/rLPAkoQ.jpg"],
-            inputfield: false,
-            link: [],
-            url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
+        // {
+        //     question: "choose your favorite",
+        //     questionID:"", 
+        //     headline: "ALERT ALERT ALERT",
+        //     description: "",
+        //     answers: [],
+        //     images: ["https://www.tutonaut.de/wp-content/uploads/2019/02/Glitch.jpg", "https://i.imgur.com/rLPAkoQ.jpg"],
+        //     inputfield: false,
+        //     link: [],
+        //     url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
 
-        },
+        // },
         {
             question: "",
+            questionID:"what_you_want_singles_to_know", 
             headline: "singles in your area are looking to meet you",
             description: "tell them something about yourself!",
             answers: [],
@@ -37,6 +40,7 @@
         },
         {
             question: "",
+            questionID:"", 
             headline: "VISIT HYDRA BERLIN",
             description: "",
             answers: [],
@@ -47,6 +51,7 @@
         },
         {
             question: "Are you ready to play a dangerous game?",
+            questionID:"feelings_towards_danger", 
             headline: "Welcome",
             description: "",
             answers: ["Danger Turns Me On",
@@ -59,6 +64,7 @@
         },
         {
             question: "",
+            questionID:"sex_role", 
             headline: "",
             description: "For the hottest user experience, tell us about yourself. Are you a:",
             answers: ["Dominant",
@@ -106,6 +112,9 @@
         description.innerHTML = "";
         headline.innerHTML = "";
         question.innerHTML = "";
+        var questionID = document.getElementById("questionID");
+        questionID.innerHTML = "";
+        
        
         let currentQueryIndex = Math.floor(Math.random()*queries.length);
         let currentQuery = queries[currentQueryIndex];
@@ -116,6 +125,7 @@
             headline.innerHTML = currentQuery.headline + ", " + capitalizeFirstLetter(name);
         }
         description.innerHTML = currentQuery.description
+        questionID.innerHTML = currentQuery.questionID;
   
         if(currentQuery.answers.length>0){
             for (let index = 0; index < currentQuery.answers.length; index++) {
@@ -236,7 +246,7 @@
 
     $("#popup").submit(function(e) {
         e.preventDefault();
-        let question = document.getElementById("question").innerHTML;
+        let question = document.getElementById("questionID").innerHTML;
            
         $.post(
             "/ajax",

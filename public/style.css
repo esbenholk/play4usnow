@@ -122,6 +122,21 @@ main{
   10px 0 80px grey;         /* outer right cyan */
 
 }
+.mini-headline{
+  width:100%;
+  text-align: center;
+  font-weight: 800;
+}
+.terms-text{
+  background-color: blue;
+}
+.terms-list{
+  list-style: circle;
+}
+.terms-list li{
+  list-style: circle;
+  margin-left: 2em;
+}
 input{
   border-bottom: 1px solid red;
   background-color: rgba(255,255,255,0);
@@ -174,7 +189,17 @@ input::placeholder {
   color: white;
   border-radius: 20px;
   padding: 20px;
-  width: 50%;
+  max-width: 90%;
+  font-family: 'Tarrget';
+  text-align: center;
+  display: inline-flex;
+  align-items: center; 
+  justify-content: center;
+  /* text-shadow: 5px 3px 2px rgba(255, 255, 255, 1); */
+  font-size: 1.5em;
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+
 }
 .exitbutton{
   position: absolute;
@@ -470,6 +495,34 @@ input::placeholder {
   margin:4em;
 }
 
+
+.tipButton{
+  border: 2px red solid;
+  width: 100px;
+  padding: 0;
+  margin:0;
+
+}
+.tipButton div{
+  margin: 0;
+  padding: 0;
+  
+}
+.tipButton input{
+  width: 100%;
+  border: 2px red solid;
+  font-size: 20px;
+  padding: 0;
+  margin:0;
+}
+.tipButton select{
+  width: 100%;
+  border: 2px red solid;
+  font-size: 10px;
+  padding: 0;
+  margin:0;
+
+}
 
 
 @media only screen and (max-width: 600px) {

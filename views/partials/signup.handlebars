@@ -40,7 +40,7 @@
 							<input type="text" style="border: 1px solid rgb(254, 7, 19); border-radius: 50px 0px 0px 50px; width: 100%; height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(0, 0, 0); text-align: left; font-family: Arial; background-color: rgb(255, 255, 255); box-sizing: border-box; font-size: 20px" placeholder=", write your email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
 						</div>
 						<div style="position: relative; width: 25%; margin: 0px 0px 15px; text-align: left; display: inline-block; height: 40px">
-							<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; background-color: rgb(254, 7, 19); margin: 0px 0px 0px -5px; border-radius: 0px 50px 50px 0px; font-size: 20px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="SUBMIT">
+							<input type="button" style="text-align: center; width: 100%; height: 100%; z-index: 5; border: 0px; color: rgb(255, 255, 255); cursor: pointer; outline: none; background-color: rgb(254, 7, 19); margin: 0px 0px 0px -5px; border-radius: 0px 50px 50px 0px; font-size: 20px" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="SUBMIT" onClick='updateEmail(value)'>
 						</div>
 					</div>
 					<div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); font-size: 11px; margin: 20px 10px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none" id="errorMsgDiv">we need your email</div>
@@ -86,5 +86,10 @@
 	let placeholder = document.getElementById("EMBED_FORM_EMAIL_LABEL")
 	let name = document.getElementById("name").innerText;
 	placeholder.placeholder =  name + placeholder.placeholder
+
+
+	function updateEmail(value){
+		console.log("email", value)
+	}
 
 </script>

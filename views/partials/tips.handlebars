@@ -1,15 +1,13 @@
-<head>
-    <meta name='_csrf', content='{{csrfToken}}'>
-</head>
+<div class="tipButton">
+   <div id="tip-button-container" class="column">
 
-
-<div id="paypal-button-container">
-            <div id="smart-button-container">
-                <div class="column"><label for="amount">TIP THEM {{performer_name}} WITH</label><input name="amountInput" type="number" class="tips"id="amount" value="" placeholder="TIP" ><span> EUR</span>
-                    <p id="priceLabelError" style="display: none; color:white;">Please enter a price</p>
+                <div>
+                <select name="descriptionInput" id="description" class="performerchoice" value="">
+                            <option value="{{performer_index}}">{{performer_name}}</option>
+                </select>
+                <div><label for="amount">WITH <input name="amountInput" type="number" class="tips" id="amount" value="" placeholder="TIP" ><span> EUR</span></label>
                 </div>
-            </div>
-            <p class="paypaldescription">If you pay with your PayPal app please be sure to annotate your username and choice of performer to service@play4usnow.com</p>
+                </div> 
+    </div>
 </div> 
 
-<script src="/paypal.js"> </script>

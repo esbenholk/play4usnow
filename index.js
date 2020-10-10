@@ -86,6 +86,8 @@ app.post("/robottest",  (req, res) => {
       console.log(err);
     });
 });
+
+
 app.post("/turnon",  (req, res) => {
   let turnon =req.body.answers
     databaseActions
@@ -105,12 +107,12 @@ app.post("/turnon",  (req, res) => {
 });
 
 app.post("/cookies",  (req, res) => {
-
   if (req.body.yes == "") {
     let username = req.body.username;
     let age = req.body.age;
 
     if(age>17){
+      console.log("sending to database", req.body, username, age);
         databaseActions
           .createUser(username, age)
           .then(result => {
@@ -183,7 +185,26 @@ app.get("/", (req, res) => {
 
 
 app.post("/ajax", (req, res) => {
-  console.log("ajax", req.body.question, req.body.answer);
+
+  let value = req.body.answer;
+  let column = req.body.question; 
+
+  if(typeof value === 'string'){
+    value = "'"+value+"'";
+    console.log("answer is a string", req.body.question, value);
+  }
+  if(column){
+    console.log(column);
+    databaseActions.dynamicUpdate(column, value, req.cookies.id).then(result => {
+      console.log(result);
+     
+     })
+     .catch(err => {
+       console.log("ups didnt insert sentence");
+     });
+  }
+ 
+ 
 });
 
 

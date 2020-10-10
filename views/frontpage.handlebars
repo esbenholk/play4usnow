@@ -32,7 +32,7 @@
                         <div class="performer">
                             <img class="thumbnail"src="{{url}}">
                             <p>{{name}}{{service}}</p>
-                            {{!-- {{>tips performer_name=name}} --}}
+                            {{>tips performer_name=name performer_index=@index}}
                         </div>
                     {{/performers}}
             </div>
@@ -84,6 +84,12 @@
     {{>popup name=name}}
 
 {{/if}}
+
+
+
+
+
+
 
 
 
