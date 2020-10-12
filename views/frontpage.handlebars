@@ -33,21 +33,15 @@
         <div class="row changing_to_column performers">
             <div class="performers column">
                     {{#performers}}
-                        <div class="performer">
-                            <img class="thumbnail"src="{{url}}">
-                            <p class="performer_description">{{name}}{{service}}</p>
-                            {{>tips performer_name=name performer_index=@index url=url}}
-                        </div>
+                        {{>performer name=name url=url action=action service=service information=information}}
+    
                     {{/performers}}
             </div>
 
             <div class="performers column">
                     {{#performers2}}
-                        <div class="performer">
-                            <img class="thumbnail" src="/assets/goddessvanessa.gif">
-                            <p class="performer_description">{{name}}{{service}}</p>
-                             {{>tips performer_name=name performer_index=@index}}
-                        </div>
+                        {{>performer name=name url=url action=action service=service information=information}}
+
                     {{/performers2}}
             </div>
         </div>
@@ -92,7 +86,7 @@
         
     </div>
 </div>
-    {{!-- {{>popup name=name}} --}}
+    {{>popup name=name}}
 
 {{/if}}
 

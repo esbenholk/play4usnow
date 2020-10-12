@@ -25,6 +25,8 @@ CREATE TABLE userdata(
     what_you_want_singles_to_know VARCHAR,
     feelings_towards_danger VARCHAR,
     sex_role VARCHAR,
+    sex_work_experience VARCHAR,
+    sex_work_consumer_experienc VARCHAR,
 
 
 

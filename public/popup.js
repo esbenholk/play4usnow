@@ -14,18 +14,7 @@
             url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
 
         },
-        // {
-        //     question: "choose your favorite",
-        //     questionID:"", 
-        //     headline: "ALERT ALERT ALERT",
-        //     description: "",
-        //     answers: [],
-        //     images: ["https://www.tutonaut.de/wp-content/uploads/2019/02/Glitch.jpg", "https://i.imgur.com/rLPAkoQ.jpg"],
-        //     inputfield: false,
-        //     link: [],
-        //     url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
 
-        // },
         {
             question: "",
             questionID:"what_you_want_singles_to_know", 
@@ -66,7 +55,7 @@
             question: "",
             questionID:"sex_role", 
             headline: "",
-            description: "For the hottest user experience, tell us about yourself. Are you a:",
+            description: "For the hottest user experience, tell us about yourself.<br> Are you a: ",
             answers: ["Dominant",
                 "Submissive",
                 "Masochist",
@@ -79,8 +68,50 @@
             link: [""],
             url : "https://64.media.tumblr.com/5710cff53f63ee210f0d922b9b8948d5/tumblr_pa386bxJTg1ri4zv1o1_540.gifv",
             color: ["pink", "white"]
+        },
+        {
+            question: "Have you ever paid for the following services? ",
+            questionID:"sex_work_consumer_experience", 
+            headline: "",
+            description: "",
+            answers: ["Porn",
+                "Stripping",
+                "Camming",
+                "Fetish/Domination",
+                "OnlyFans",
+                "Sexual Intercourse",
+                "Other Sexual Service / Content",
+                "I dont consume these services",
+                "I dont pay for these services"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://play4usnow.s3.amazonaws.com/sissy/Screen+Shot+2020-10-09+at+11.53.15.png",
+            color: ["rgb(255, 0, 225)", "yellow"]
+        },
+
+        {
+            question: "Have you ever received payment for the following services?",
+            questionID:"sex_work_experience", 
+            headline: "",
+            description: "",
+            answers: ["Porn",
+                "Stripping",
+                "Camming",
+                "Fetish/Domination",
+                "OnlyFans",
+                "Sexual Intercourse",
+                "Other Sexual Service / Content",
+                "I dont consume these services",
+                "I dont pay for these services"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://media2.giphy.com/media/10rtoKqcDukJgc/giphy.gif?cid=ecf05e47sqo9x5operabvngievvqd8ql53onjm3gx5qkg4dn&rid=giphy.gif",
+            color: ["white", "red"]
         }
-        
     ]
  
     let colors = ["red","white", "#e04ac7", "#00ff19"]
