@@ -57,6 +57,23 @@ body{
   background-color: grey;
 }
 
+.red{
+  background-color: red;
+}
+#agreement{
+  display: none;
+}
+.megalogo{
+  height: 90%;
+  max-width: 100%;
+  object-fit: contain;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%)
+
+}
+
+
 
 main{
   position: relative;
@@ -111,6 +128,7 @@ main{
   justify-content: left;
 }
 .terms{
+
   width: 50%;
   height:auto;
   max-height: 90%;
@@ -132,7 +150,7 @@ main{
   
 }
 .terms img{
-  max-height: 100px;
+  max-height: 300px;
 }
 .mini-headline{
   width:100%;

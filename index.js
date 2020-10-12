@@ -64,8 +64,7 @@ app.get("/cookies", (req, res) => {
   if (req.cookies.authenticated != "true") {
       console.log("cookie isnt authenticated");
       res.render("cookies", {
-        layout: "main",
-        terms: terms
+        layout: "main"
       });
   } else {
     res.redirect("/");
@@ -123,8 +122,7 @@ app.post("/cookies",  (req, res) => {
           .catch(err => {
             res.render("cookies", {
               layout: "main",
-              alert: "you didn't give us the required data",
-              terms: terms
+              alert: "you didn't give us the required data"
             });
           });
     
@@ -132,8 +130,7 @@ app.post("/cookies",  (req, res) => {
     } else{
       res.render("cookies", {
         layout: "main",
-        alert: "you have to be over 18",
-        terms: terms
+        alert: "you have to be over 18"
       });
     }
     
