@@ -1,6 +1,22 @@
 
 
 (function() {
+
+    let openingQuery = [ {
+            question: "Are you ready to play a dangerous game?",
+            questionID:"feelings_towards_danger", 
+            headline: "Welcome",
+            description: "",
+            answers: ["Danger Turns Me On",
+                "Get Me Out Of Here"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://thumbs.gfycat.com/AthleticSimpleHuemul-size_restricted.gif",
+        }
+        
+    ]
     let queries = [
         {
             question: "are you ready?",
@@ -38,19 +54,7 @@
             link: ["https://www.hydra-berlin.de/beratungsstelle/informationen/bibliothek/", "https://www.hydra-berlin.de/fileadmin/_processed_/csm_16-100_de7212bcde.jpg"],
             url : "",
         },
-        {
-            question: "Are you ready to play a dangerous game?",
-            questionID:"feelings_towards_danger", 
-            headline: "Welcome",
-            description: "",
-            answers: ["Danger Turns Me On",
-                "Get Me Out Of Here"
-                ],
-            images: [],
-            inputfield: false,
-            link: [""],
-            url : "https://thumbs.gfycat.com/AthleticSimpleHuemul-size_restricted.gif",
-        },
+       
         {
             question: "",
             questionID:"sex_role", 
@@ -116,14 +120,12 @@
  
     let colors = ["red","white", "#e04ac7", "#00ff19"]
   
-    setTimeout(showPopUp, 3000);
-
+   
     let answer = "";
     let name = $("#name")[0].innerText;
  
-    function showPopUp(){
-
-        createPopUp();
+    function showPopUp(queries){
+        createPopUp(queries);
     
         let closePopUp = document.getElementById("closePopUp");
         
@@ -132,7 +134,9 @@
         })
     }
 
-    function createPopUp(){
+  
+
+    function createPopUp(queryarray){
         var form = document.getElementById("popup");
        
         var question = document.getElementById("question");
@@ -147,9 +151,9 @@
         questionID.innerHTML = "";
         
        
-        let currentQueryIndex = Math.floor(Math.random()*queries.length);
-        let currentQuery = queries[currentQueryIndex];
-        queries.splice( currentQueryIndex, 1);
+        let currentQueryIndex = Math.floor(Math.random()*queryarray.length);
+        let currentQuery = queryarray[currentQueryIndex];
+        queryarray.splice( currentQueryIndex, 1);
 
         question.innerHTML = currentQuery.question;
         if(currentQuery.headline){
@@ -273,6 +277,9 @@
     }
   
 
+    setTimeout(showPopUp(openingQuery), 20000);
+
+
 
     $("#popup").submit(function(e) {
         e.preventDefault();
@@ -292,9 +299,9 @@
 
         if(queries.length>0){
             if(answer === "too shy to answer"){
-                showPopUp();
+                showPopUp(queries);
             } else {
-                setTimeout(showPopUp, 3000); 
+                setTimeout(showPopUp(queries), 3000); 
             }
         }
      
