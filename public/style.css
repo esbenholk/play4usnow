@@ -63,6 +63,16 @@ body{
 #agreement{
   display: none;
 }
+#loader{
+  background-color: grey;
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+}
+
+
 .megalogo{
   height: 90%;
   max-width: 100%;

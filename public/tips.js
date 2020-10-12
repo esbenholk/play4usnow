@@ -11,7 +11,6 @@ let tipsButtonUntogglers = $(".tipButtonUntoggler");
 for (let index = 0; index < tipsButtonUntogglers.length; index++) {
   const element = tipsButtonUntogglers[index];
   element.addEventListener("click", function(ev){
-    console.log(ev.target.parentNode);
     ev.target.parentNode.style.display = "none";
   
   })
@@ -33,7 +32,6 @@ async function createTipButton(index){
 
 function initPayPalButton(element) {
   var description = element.querySelector('#tip-button-container #description');
-  console.log("in tips", description);
   var amount = element.querySelector('#tip-button-container #amount');
 
 
@@ -76,7 +74,6 @@ function initPayPalButton(element) {
     },
 
     onClick: function () {
-      console.log(description.value, description);
   
       purchase_units[0].description = description.value;
       purchase_units[0].amount.value = amount.value;

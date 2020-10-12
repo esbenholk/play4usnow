@@ -1,10 +1,16 @@
 
 
 window.onload = function() {
-    console.log("loaded");
+    if(document.getElementById("agreement")
+    ){
+        setTimeout(() => document.getElementById("agreement").style.display = "block", 1000);
 
-    
+    }
+    if(document.getElementById("loader")
+    ){
+        setTimeout(() => document.getElementById("loader").style.display = "none", 100);
+
+    }
 
 
-    setTimeout(() => document.getElementById("agreement").style.display = "block", 1000);
 };

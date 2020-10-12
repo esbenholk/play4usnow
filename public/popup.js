@@ -116,7 +116,7 @@
  
     let colors = ["red","white", "#e04ac7", "#00ff19"]
   
-    setTimeout(showPopUp, 0);
+    setTimeout(showPopUp, 3000);
 
     let answer = "";
     let name = $("#name")[0].innerText;
