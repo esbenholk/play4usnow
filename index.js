@@ -1,5 +1,4 @@
 ///content
-const terms = require("./public/content/terms.json")[0].terms
 const performers = require("./public/content/performers.json")
 const performers2 = require("./public/content/performers2.json")
 
