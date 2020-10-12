@@ -42,19 +42,7 @@
             link: [],
             url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
 
-        },
-        {
-            question: "",
-            questionID:"", 
-            headline: "VISIT HYDRA BERLIN",
-            description: "",
-            answers: [],
-            images: [],
-            inputfield: false,
-            link: ["https://www.hydra-berlin.de/beratungsstelle/informationen/bibliothek/", "https://www.hydra-berlin.de/fileadmin/_processed_/csm_16-100_de7212bcde.jpg"],
-            url : "",
-        },
-       
+        }, 
         {
             question: "",
             questionID:"sex_role", 
