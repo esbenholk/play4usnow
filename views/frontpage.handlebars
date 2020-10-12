@@ -10,29 +10,33 @@
 
 
     <div class="main-content">
-        <div class="headline">PLAY 4 US NOW <br>{{name}}</div>
-
-        <div class="row frontpage-div">
-           <a class="action">
-                <p>BROWSE</p> 
-           </a>
-            <a class="action">
-                <p> SUBMIT</p>
-           </a>
-            <a class="action pay">
-                <p> PAY</p> 
-           </a>
-         
+        <div class="ticker topticker">
+            <div id="headlines3" class="headlines">
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">your data is so sexy {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">your data is so sexy  {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">your data is so sexy  {{name}}</p></a>
+            </div>
         </div>
-   
+
+        <div class="headline-container">
+            <img class="headline-logo" src="assets/logo.webp">
+            <h1 class="headline">PLAY 4 US NOW <br>{{name}}</h1>
+        </div>
+
+        <div class="fronpage-div">
+        {{>description}}
+        </div>
 
         <div class="row changing_to_column performers">
             <div class="performers column">
                     {{#performers}}
                         <div class="performer">
                             <img class="thumbnail"src="{{url}}">
-                            <p>{{name}}{{service}}</p>
-                            {{>tips performer_name=name performer_index=@index}}
+                            <p class="performer_description">{{name}}{{service}}</p>
+                            {{>tips performer_name=name performer_index=@index url=url}}
                         </div>
                     {{/performers}}
             </div>
@@ -41,7 +45,8 @@
                     {{#performers2}}
                         <div class="performer">
                             <img class="thumbnail" src="/assets/goddessvanessa.gif">
-                            <p>{{name}}{{service}}</p>
+                            <p class="performer_description">{{name}}{{service}}</p>
+                             {{>tips performer_name=name performer_index=@index}}
                         </div>
                     {{/performers2}}
             </div>
@@ -58,6 +63,21 @@
             {{>payment name=name}}
         </div>
 
+        <div class="ticker">
+            <div id="headlines2" class="headlines">
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+                <a class="ticker-object">play 4 us now </a>
+                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
+            </div>
+        </div>
+
+
+
+
+
   
 
       
@@ -69,19 +89,10 @@
          
         <img class="left" src="/assets/goddessvanessa.gif">
         <img src="/assets/logo.webp">
-        <div class="ticker">
-            <div id="headlines1" class="headlines">
-                <a class="ticker-object">play 4 us now </a>
-                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
-                <a class="ticker-object">play 4 us now </a>
-                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
-                <a class="ticker-object">play 4 us now </a>
-                <a class="ticker-object"><p class="header-gif">we see you {{name}}</p></a>
-            </div>
-        </div>
+        
     </div>
 </div>
-    {{>popup name=name}}
+    {{!-- {{>popup name=name}} --}}
 
 {{/if}}
 

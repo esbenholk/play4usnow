@@ -1,13 +1,26 @@
-<div class="tipButton">
-   <div id="tip-button-container" class="column">
 
-                <div>
-                <select name="descriptionInput" id="description" class="performerchoice" value="">
-                            <option value="{{performer_index}}">{{performer_name}}</option>
-                </select>
-                <div><label for="amount">WITH <input name="amountInput" type="number" class="tips" id="amount" value="" placeholder="TIP" ><span> EUR</span></label>
+<div>
+    <h1 class="tipButtonToggler"> TIP {{performer_name}}</h1> 
+    
+    <div class="tipButton" style="display:none">
+
+        <div id="tip-button-container" class="centerContainer column">
+                <input type="hidden" name="descriptionInput" id="description" class="performerchoice" value="{{performer_name}}">
+                </input>
+               
+
+                <p class="tip_description">here could be a text describing both bucketing tips and the good usecase for tipping and paying for sex work, performance art and cam presence</p>
+                <img src="{{url}}">
+                 <h1 class="step-headline">TIP {{performer_name}}, WITH</h1> 
+                <div class="row center">
+                    <label for="amount"><input name="amountInput" type="number" class="individual_tips" id="amount" value="" placeholder="__ EUR" >
+                    </label> 
+                    {{!-- <p>EUR</p> --}}
                 </div>
-                </div> 
-    </div>
-</div> 
+
+        </div>
+        <p class="tipButtonUntoggler" style="width: 100%;">dont tip {{performer_name}} anyway </p> 
+
+    </div> 
+</div>
 

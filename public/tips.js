@@ -1,4 +1,26 @@
 
+let tipsButtonTogglers = $(".tipButtonToggler");
+for (let index = 0; index < tipsButtonTogglers.length; index++) {
+  const element = tipsButtonTogglers[index];
+  element.addEventListener("click", function(ev){
+    ev.target.parentNode.children[1].style.display = "block";
+  
+  })
+}
+let tipsButtonUntogglers = $(".tipButtonUntoggler");
+for (let index = 0; index < tipsButtonUntogglers.length; index++) {
+  const element = tipsButtonUntogglers[index];
+  element.addEventListener("click", function(ev){
+    console.log(ev.target.parentNode);
+    ev.target.parentNode.style.display = "none";
+  
+  })
+}
+
+
+
+
+
 $(".tipButton").each(function(index){
    createTipButton(index);
   });

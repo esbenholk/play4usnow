@@ -204,7 +204,6 @@
     
         let windowHeight = window.innerHeight;
         let windowWidth = window.innerWidth;
-        console.log(windowHeight-500, getRandomNumberBetween(0, 145));
 
         if(window.innerWidth>750){
             form.style.width = 500 +"px"

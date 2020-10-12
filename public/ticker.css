@@ -31,16 +31,20 @@
     align-items: center;
     
 }
+.ticker.topticker{
+  margin-bottom: 1em;
+
+}
 .headlines {
     display: flex;
     justify-content: center;
     white-space: nowrap;
     position: absolute;
-    left: 50%;
+    left: 0%;
     z-index: 8;
-    -webkit-animation: argh-my-eyes 0.5s infinite;
+    /* -webkit-animation: argh-my-eyes 0.5s infinite;
     -moz-animation:    argh-my-eyes 0.5s infinite;
-    animation:         argh-my-eyes 0.5s infinite;
+    animation:         argh-my-eyes 0.5s infinite; */
 
   
 }
