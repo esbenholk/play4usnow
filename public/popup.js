@@ -112,8 +112,17 @@
     let answer = "";
     let name = $("#name")[0].innerText;
  
-    function showPopUp(queries){
+    function showPopUp(){
         createPopUp(queries);
+    
+        let closePopUp = document.getElementById("closePopUp");
+        
+        closePopUp.addEventListener("click", function(ev){
+            answer = "too shy to answer";
+        })
+    }
+    function showFirstPopUp(){
+        createPopUp(openingQuery);
     
         let closePopUp = document.getElementById("closePopUp");
         
@@ -265,7 +274,7 @@
     }
   
 
-    setTimeout(showPopUp(openingQuery), 20000);
+    setTimeout(showFirstPopUp, 20000);
 
 
 
@@ -287,9 +296,9 @@
 
         if(queries.length>0){
             if(answer === "too shy to answer"){
-                showPopUp(queries);
+                showPopUp();
             } else {
-                setTimeout(showPopUp(queries), 3000); 
+                setTimeout(showPopUp(), 3000); 
             }
         }
      

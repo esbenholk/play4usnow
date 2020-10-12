@@ -8,7 +8,6 @@
     let possible  = [
         "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
         "https://fenzy.de/media/uploads/public/product/9662-0940d404cd5d6448.jpg",
-        "https://www.dw.com/image/37709110_403.jpg",
         "https://www.thcfinder.com/uploads/files/super-big-sexy-nugs-thcfinder.jpg",
         "https://m.media-amazon.com/images/I/71vGZmxWNeL._SS500_.jpg",
         "https://chandvishah.com/therapy/wp-content/uploads/sites/4/2019/11/crystals.png",
