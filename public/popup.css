@@ -57,6 +57,7 @@
   background-size: 100% 100%;
   min-height: 250px;
   font-family: 'STRRETCH SANS';
+  background-color: red;
 }
 #answers{
   flex-grow: 2;
