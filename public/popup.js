@@ -352,7 +352,7 @@
             if(answer === "too shy to answer"){
                 showPopUp();
             } else {
-                setTimeout(showPopUp, 6000); 
+                setTimeout(showPopUp, 2000); 
             }
         }
      

@@ -34,7 +34,13 @@ module.exports.dynamicUpdate = function dynamicUpdate(column, value, id) {
 };
 module.exports.dynamicTip = function dynamicTip(performer, tip, id) {
   return database.query(
-    `UPDATE userdata SET `+  performer + ` =  ` + tip + ` WHERE id =$1 RETURNING *`,
+    `UPDATE userdata SET `+  performer + ` = $1 WHERE id =$2 RETURNING *`,
+    [tip,id]  
+  );
+};
+module.exports.getTip = function getTip(performer, id) {
+  return database.query(
+    `SELECT` + performer + ` FROM userdata WHERE id =$1`,
     [id]  
   );
 };
@@ -51,12 +57,16 @@ module.exports.dynamicTip = function dynamicTip(performer, tip, id) {
 
 
 
-module.exports.updatePaymentStatus= function updatePaymentStatus(has_tipped, real_name, id) {
+module.exports.updatePaymentStatus= function updatePaymentStatus(has_tipped, real_name, performer, tip, id) {
   return database.query(
-    `UPDATE userdata SET has_tipped_performer = $1, name=$2 WHERE id =$3 RETURNING *`,
+    `UPDATE userdata SET has_tipped_performer = $1, name=$2, `+  performer + ` =  ` + tip + ` WHERE id =$3 RETURNING *`,
     [has_tipped, real_name, id]  
   );
 };
+
+
+
+
 module.exports.tipPerformer1= function tipPerformer1(amount, id) {
   return database.query(
     `UPDATE userdata SET performer1=$1 WHERE id =$2 RETURNING *`,

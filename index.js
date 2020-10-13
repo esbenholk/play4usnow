@@ -207,7 +207,7 @@ app.post("/ajax", (req, res) => {
     console.log("answer is a string", req.body.question, value);
   }
   if(column){
-    console.log(column);
+    console.log(column, value);
     databaseActions.dynamicUpdate(column, value, req.cookies.id).then(result => {
       console.log(result);
      
@@ -220,10 +220,72 @@ app.post("/ajax", (req, res) => {
  
 });
 
+app.post("/payment", (req,res)=>{
+  
+  let value = parseInt(req.body.amount); 
+  let column = req.body.performer.replace(/\s/g, '');
+  console.log(req.body, req.body.column, column);
 
+  databaseActions
+  .getUser(req.cookies.id)
+  .then(result => {
 
-app.post("/payment", (req, res) => {
-  console.log(req.body.performer, parseInt(req.body.amount));
+    if(result.rows[0].has_tipped_performer === 'PAID'){
+
+      if(column === "Kiko"){
+        value = value + result.rows[0].Kiko
+      } else if(column === "MistressAmandara"){
+        value = value + result.rows[0].MistressAmandara
+      } else if(column === "PetraBlair"){
+        value = value + result.rows[0].PetraBlair
+      } else if(column === "VioletViolent"){
+        value = value + result.rows[0].VioletViolent
+      } else if(column === "VegaBonita"){
+        value = value + result.rows[0].VegaBonita
+      } else if(column === "GoddessVanessa"){
+        value = value + result.rows[0].GoddessVanessa
+      } else if(column === "GoofyToof"){
+        value = value + result.rows[0].GoofyToof
+      } else if(column === "sendatiptoeveryone"){
+        value = value + result.rows[0].sendatiptoeveryone
+      }
+
+      console.log(value, column, result.rows[0]);
+      databaseActions.dynamicTip(column, value, req.cookies.id).then(result => {
+        console.log("tip added", result);
+       
+       })
+       .catch(err => {
+         console.log("didnt add tip");
+      });
+   
+      
+     
+
+    }else {
+      databaseActions
+      .updatePaymentStatus("PAID", req.body.paypal_username, column, value, req.cookies.id)
+      .then(result => {
+          console.log("payment registered", result);
+  
+      })
+      .catch(err => {
+        console.log("paymentERROR", err);
+      });
+    }
+  
+  })
+  .catch(err => {
+    console.log("ups didnt insert sentence");
+  });
+ 
+ 
+  
+
+})
+
+app.post("/paymentXXXX", (req, res) => {
+  console.log(req.body, parseInt(req.body.amount));
  
   databaseActions
       .updatePaymentStatus("PAID", req.body.paypal_username, req.cookies.id)

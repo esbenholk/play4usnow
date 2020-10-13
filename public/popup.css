@@ -28,6 +28,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'STRRETCH SANS';
+  src: url('/assets/fonts/STRRETCHSANSRegular.woff2') format('woff2'),
+      url('/assets/fonts/STRRETCHSANSRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 .popup{
   position: fixed;
@@ -46,6 +56,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-height: 250px;
+  font-family: 'STRRETCH SANS';
 }
 #answers{
   flex-grow: 2;
@@ -107,11 +118,12 @@ input{
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
-  font-family: fantasy;
+  font-family: 'STRRETCH SANS';
 }
 #descriptiontext{
   color: white;
   width: 100%;
   text-align: center;
   margin-top: 2em;
+  font-family: 'STRRETCH SANS';
 }

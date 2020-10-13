@@ -17,9 +17,6 @@ for (let index = 0; index < tipsButtonUntogglers.length; index++) {
 }
 
 
-
-
-
 $(".tipButton").each(function(index){
    createTipButton(index);
   });
@@ -90,9 +87,11 @@ function initPayPalButton(element) {
 
     onApprove: function (data, actions) {
       return actions.order.capture().then(function (details) {
-        alert('Transaction completed by ' + details.payer.name.given_name + '!');
+        alert('Transaction completed!');
 
         updateUser(details, description.value, amount.value)
+        closeTipping();
+       
       });
     },
 
@@ -103,4 +102,26 @@ function initPayPalButton(element) {
 
 
   }).render(element);
+}
+
+function updateUser(details, description, amount){
+  $.post("/payment",{
+    amount: amount, 
+    performer: description,  
+    paypal_username: details.payer.name.given_name + " " +details.payer.name.surname,
+    _csrf : $('meta[name="_csrf"]').attr('content')
+  }, function(data){
+    console.log(data);
+ 
+  });
+}
+
+function closeTipping(){
+  let tipcontainer = $(".tipButton");
+  for (let index = 0; index < tipcontainer.length; index++) {
+    const element = tipcontainer[index];
+    element.style.display = "none";
+  
+    
+  }
 }
