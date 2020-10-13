@@ -179,6 +179,23 @@ app.get("/", (req, res) => {
 });
 
 
+app.get("/countdown", (req, res)=>{
+  databaseActions
+  .getUser(req.cookies.id)
+  .then(result => {
+  
+    res.render("countdown", {
+        layout: "main",
+        name: result.rows[0].username, 
+  
+    });
+  
+  })
+  .catch(err => {
+    console.log("ups didnt insert sentence");
+  });
+}
+)
 
 app.post("/ajax", (req, res) => {
 

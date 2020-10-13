@@ -35,7 +35,7 @@
             question: "",
             questionID:"what_you_want_singles_to_know", 
             headline: "singles in your area are looking to meet you",
-            description: "tell them something about yourself!",
+            description: "singles in your area are looking to meet you, tell them something about yourself!",
             answers: [],
             images: [],
             inputfield: true,
@@ -95,15 +95,69 @@
                 "OnlyFans",
                 "Sexual Intercourse",
                 "Other Sexual Service / Content",
-                "I dont consume these services",
-                "I dont pay for these services"
+                "I dont perform these services",
+                "I dont charge for these services"
                 ],
             images: [],
             inputfield: false,
             link: [""],
             url : "https://media2.giphy.com/media/10rtoKqcDukJgc/giphy.gif?cid=ecf05e47sqo9x5operabvngievvqd8ql53onjm3gx5qkg4dn&rid=giphy.gif",
             color: ["white", "red"]
-        }
+        },
+        {
+            question: "CLICK THIS LINK TO GET FOOT FETISH PORN",
+            questionID:"follows_link_to_foot_porn", 
+            headline: "this is an advertisement! this is an advertisement! this is an advertisement!",
+            description: "",
+            answers: [],
+            images: [],
+            inputfield: false,
+            link: ["http://queerporn.tv/wp/?s=foot","https://play4usnow.s3.amazonaws.com/feet2.gif"],
+            url : "",
+            color: ["white", "red"]
+        },
+        {
+            question: " What are you looking for?",
+            questionID:"looking_for", 
+            headline: "",
+            description: "are you lost in anonymous proxy too?",
+            answers: ["Friendship",
+               " Sex",
+                "Love",
+                "A Reason to Live",
+              "  A Reason to Die"
+                ],
+            images: [],
+            inputfield: false,
+            link: [""],
+            url : "https://play4usnow.s3.amazonaws.com/cutoutlogo.jpg",
+            color: ["#00ff11", "#6200ff"]
+        },
+        {
+            question: "Are you a human?",
+            questionID:"being_a_dog", 
+            headline: "Wanna be my dog?",
+            description: "",
+            answers: ["woof", "Can I stay in your cage?", "Can I stay at the end of your bed?", "I am a human in need of training", "I think I’m a cat", "Is there another option?" ,"Why can I not be a human?"], 
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "https://assets.petco.com/petco/image/upload/f_auto,q_auto,t_ProductDetail-large/2873817-back-1",
+            color: ["black", "red"]
+        },
+        {
+            question: "Does data make you horny?",
+            questionID:"does_data_make_horny", 
+            headline: "ake my identity and expose me",
+            description: "",
+            answers: ["I can’t...", "I’m free and open", "Im private forever", "I made my family who accept me and know everything","If my family find out Ill be turned on, but disowned"] ,
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "https://mistresskiarasdungeon.com/mistressblog/mistressblog/wp-content/uploads/2016/12/75CC87B6-C922-47AC-8052-2DFCE855E77B.jpg",
+            color: ["pink", "yellow"]
+            },
+            
     ]
  
     let colors = ["red","white", "#e04ac7", "#00ff19"]
@@ -205,7 +259,7 @@
             })
          
         } else if(currentQuery.link.length>0){
-            answers.innerHTML = `<a href="${currentQuery.link[0]}"><img src="${currentQuery.link[1]}"/></a>`;
+            answers.innerHTML = `<a href="${currentQuery.link[0]}" target="_blank"><img src="${currentQuery.link[1]}"/></a>`;
         }
 
         if(currentQuery.color){
@@ -238,15 +292,15 @@
         let windowWidth = window.innerWidth;
 
         if(window.innerWidth>750){
-            form.style.width = 500 +"px"
+            form.style.width = 400 +"px"
             form.style.height = "auto"
-            form.style.top = getRandomNumberBetween(0,windowHeight-500) +"px";
-            form.style.left = getRandomNumberBetween(0,windowWidth-500)+"px";
+            form.style.top = getRandomNumberBetween(0,windowHeight-400) +"px";
+            form.style.left = getRandomNumberBetween(0,windowWidth-400)+"px";
         } else{
-            form.style.width = 300 +"px"
-            form.style.height = 300 +"px"
-            form.style.top = getRandomNumberBetween(0,windowHeight-300) +"px";
-            form.style.left = getRandomNumberBetween(0,windowWidth-300)+"px";
+            form.style.width = 250 +"px"
+            form.style.height = 250 +"px"
+            form.style.top = getRandomNumberBetween(0,windowHeight-250) +"px";
+            form.style.left = getRandomNumberBetween(0,windowWidth-250)+"px";
             form.style.top = 0;
             form.style.left =0;
         }
@@ -274,7 +328,7 @@
     }
   
 
-    setTimeout(showFirstPopUp, 20000);
+    setTimeout(showFirstPopUp, 30000);
 
 
 
@@ -298,7 +352,7 @@
             if(answer === "too shy to answer"){
                 showPopUp();
             } else {
-                setTimeout(showPopUp(), 3000); 
+                setTimeout(showPopUp, 6000); 
             }
         }
      

@@ -33,20 +33,24 @@
         {{>description}}
         </div>
 
-        <div class="row changing_to_column performers">
-            <div class="performers column">
-                    {{#performers}}
-                        {{>performer name=name url=url action=action service=service information=information}}
-    
-                    {{/performers}}
-            </div>
+        <div class="performercontainer">
+            <div class="row changing_to_column">
+                <div class="performers column">
+                        {{#performers}}
+                            {{>performer name=name url=url action=action service=service information=information}}
+        
+                        {{/performers}}
+                </div>
 
-            <div class="performers column">
-                    {{#performers2}}
-                        {{>performer name=name url=url action=action service=service information=information}}
+                <div class="performers column">
+                        {{#performers2}}
+                            {{>performer name=name url=url action=action service=service information=information}}
 
-                    {{/performers2}}
+                        {{/performers2}}
+                </div>
+               
             </div>
+             <img class="performer-image" src="/assets/camgirl.png">
         </div>
 
        
@@ -86,6 +90,8 @@
          
         <img class="left" src="/assets/goddessvanessa.gif">
         <img src="/assets/logowheader.webp">
+    
+
         
     </div>
 </div>

@@ -27,6 +27,10 @@ CREATE TABLE userdata(
     sex_role VARCHAR,
     sex_work_experience VARCHAR,
     sex_work_consumer_experienc VARCHAR,
+    follows_link_to_foot_porn VARCHAR,
+    looking_for VARCHAR,
+    being_a_dog VARCHAR,
+    does_data_make_horny VARCHAR,
 
 
 

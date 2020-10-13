@@ -42,6 +42,7 @@
   justify-content: center;
   align-items: center;   
   background-position: center;
+  object-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-height: 250px;
@@ -98,6 +99,7 @@ input{
   -moz-animation:    argh-my-eyes 0.5s infinite;
   animation:         argh-my-eyes 0.5s infinite;
   color: #00ff4c;
+
 }
 #question{
   color: white;
@@ -105,6 +107,7 @@ input{
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
+  font-family: fantasy;
 }
 #descriptiontext{
   color: white;
