@@ -424,6 +424,8 @@ input::placeholder {
 }
 .description p{
   text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .performercontainer{
@@ -460,15 +462,14 @@ input::placeholder {
 }
 .strip{
   background-color: red;
-  width: 0;
-
+  width: 20px;
 }
 .strip img{
   width: 100%;
   object-fit: contain;
 }
 .main-content{
-  flex-grow: 10;
+  /* flex-grow: 10; */
   height: 100%;
   /* display: flex;
   flex-direction: column;
@@ -495,8 +496,8 @@ input::placeholder {
   border-bottom: 2px white solid;
   display: flex;
   background-color: red;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2em;
   /* margin-bottom: 2em; */
   box-shadow: 0 0 50px #fff;   
