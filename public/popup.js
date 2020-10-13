@@ -142,7 +142,7 @@
             images: [], 
             inputfield: false,  
             link: [ ],
-            url : "https://assets.petco.com/petco/image/upload/f_auto,q_auto,t_ProductDetail-large/2873817-back-1",
+            url : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MCh._Silverbarn%27s_Ulfi_a3_q.jpg/800px-MCh._Silverbarn%27s_Ulfi_a3_q.jpg",
             color: ["black", "red"]
         },
         {
@@ -154,7 +154,7 @@
             images: [], 
             inputfield: false,  
             link: [ ],
-            url : "https://mistresskiarasdungeon.com/mistressblog/mistressblog/wp-content/uploads/2016/12/75CC87B6-C922-47AC-8052-2DFCE855E77B.jpg",
+            url : "https://www.assuranceagency.com/Media/Default/blog/headers/Voluntary%20Series_Identity%20Theft.jpg",
             color: ["pink", "yellow"]
             },
             
