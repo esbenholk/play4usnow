@@ -223,7 +223,7 @@ app.post("/ajax", (req, res) => {
 app.post("/payment", (req,res)=>{
   
   let value = parseInt(req.body.amount); 
-  let column = req.body.performer.replace(/\s/g, '');
+  let column = req.body.performer.replace(/\s/g, '').toLowerCase();
   console.log(req.body, req.body.column, column);
 
   databaseActions
@@ -232,20 +232,20 @@ app.post("/payment", (req,res)=>{
 
     if(result.rows[0].has_tipped_performer === 'PAID'){
 
-      if(column === "Kiko"){
+      if(column === "kiko"){
         value = value + result.rows[0].Kiko
-      } else if(column === "MistressAmandara"){
-        value = value + result.rows[0].MistressAmandara
-      } else if(column === "PetraBlair"){
-        value = value + result.rows[0].PetraBlair
-      } else if(column === "VioletViolent"){
-        value = value + result.rows[0].VioletViolent
-      } else if(column === "VegaBonita"){
-        value = value + result.rows[0].VegaBonita
-      } else if(column === "GoddessVanessa"){
-        value = value + result.rows[0].GoddessVanessa
-      } else if(column === "GoofyToof"){
-        value = value + result.rows[0].GoofyToof
+      } else if(column === "mistressamandara"){
+        value = value + result.rows[0].mistressamandara
+      } else if(column === "petrablair"){
+        value = value + result.rows[0].petrablair
+      } else if(column === "violetviolent"){
+        value = value + result.rows[0].violetviolent
+      } else if(column === "vegabonita"){
+        value = value + result.rows[0].vegabonita
+      } else if(column === "goddessvanessa"){
+        value = value + result.rows[0].goddessvanessa
+      } else if(column === "goofytoof"){
+        value = value + result.rows[0].goofytoof
       } else if(column === "sendatiptoeveryone"){
         value = value + result.rows[0].sendatiptoeveryone
       }
@@ -284,150 +284,6 @@ app.post("/payment", (req,res)=>{
 
 })
 
-app.post("/paymentXXXX", (req, res) => {
-  console.log(req.body, parseInt(req.body.amount));
- 
-  databaseActions
-      .updatePaymentStatus("PAID", req.body.paypal_username, req.cookies.id)
-      .then(result => {
-          console.log("payment registered", result);
-          let added_amount = parseInt(req.body.amount);
-         
-          if(req.body.performer === "performer1"){
-            console.log("tips performer1");
-            if(result.rows[0].performer1 ){
-              added_amount = result.rows[0].performer1 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer1(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          }
-          else if(req.body.performer === "performer2"){
-            console.log("tips performer2");
-            if(result.rows[0].performer2 ){
-              added_amount = result.rows[0].performer2 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer2(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer2 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-          else if(req.body.performer === "performer3"){
-            console.log("tips performer3");
-            if(result.rows[0].performer3 ){
-              added_amount = result.rows[0].performer3 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer3(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } else if(req.body.performer === "performer4"){
-            if(result.rows[0].performer4 ){
-              added_amount = result.rows[0].performer4 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer4(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          }
-          else if(req.body.performer === "performer5"){
-            console.log("tips performer5");
-            if(result.rows[0].performer5 ){
-              added_amount = result.rows[0].performer5 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer5(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-          else if(req.body.performer === "performer6"){
-            console.log("tips performer6");
-            if(result.rows[0].performer6 ){
-              added_amount = result.rows[0].performer6 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer6(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-          else if(req.body.performer === "performer7"){
-            console.log("tips performer7");
-            if(result.rows[0].performer7 ){
-              added_amount = result.rows[0].performer7 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer7(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-          else if(req.body.performer === "performer8"){
-            console.log("tips performer8");
-            if(result.rows[0].performer8 ){
-              added_amount = result.rows[0].performer8 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer8(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-          else if(req.body.performer === "performer9"){
-            console.log("tips performer9");
-            if(result.rows[0].performer9 ){
-              added_amount = result.rows[0].performer9 + parseInt(req.body.amount)
-            } 
-            databaseActions
-            .tipPerformer9(added_amount, req.cookies.id)
-            .then(result => {
-              console.log("added performer1 tip", result);
-            })
-            .catch(err => {
-              console.log("tippingERROR", err);
-            });
-          } 
-         
-        
-      })
-      .catch(err => {
-        console.log("paymentERROR", err);
-      });
-  
-
- 
-
-});
 
 
 

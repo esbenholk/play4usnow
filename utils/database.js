@@ -67,60 +67,6 @@ module.exports.updatePaymentStatus= function updatePaymentStatus(has_tipped, rea
 
 
 
-module.exports.tipPerformer1= function tipPerformer1(amount, id) {
-  return database.query(
-    `UPDATE userdata SET performer1=$1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer2= function tipPerformer2(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer2=$1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer3= function tipPerformer3(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer3=$1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer4= function tipPerformer4(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer4 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer5= function tipPerformer5(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer5 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer6= function tipPerformer6(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer6 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer7= function tipPerformer7(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer7 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer8= function tipPerformer8(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer8 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
-module.exports.tipPerformer9= function tipPerformer9(amount, id) {
-  return database.query(
-    `UPDATE userdata SET perfomer9 =  $1 WHERE id =$2 RETURNING *`,
-    [amount, id]  
-  );
-};
 
 
 
