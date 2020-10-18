@@ -152,6 +152,9 @@ main{
   width: 100%;
   justify-content: space-around;
 }
+.column.bottom{
+  justify-content: flex-end;
+}
 .row.center{
   justify-content: center;
   align-items: center;
@@ -210,7 +213,7 @@ input{
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
-  margin-bottom: 0.2em;
+  /* margin-bottom: 0.2em; */
   color: red;
 }
 input::placeholder {

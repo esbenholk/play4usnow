@@ -55,11 +55,12 @@
   object-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  min-height: 250px;
+  min-height: 300px;
   font-family: 'STRRETCH SANS';
   background-color: red;
 }
 #answers{
+  display: inline-block;
   flex-grow: 2;
   display:flex;
  flex-wrap: wrap;
@@ -72,7 +73,7 @@
 .button{
   flex-grow: 1;
   width: 40%;
-  height: 30px;
+  /* height: 30px; */
   background-color: #00ff4c;
   margin: 0.1em;
 }

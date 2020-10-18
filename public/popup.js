@@ -148,7 +148,7 @@
         {
             question: "Does data make you horny?",
             questionID:"does_data_make_horny", 
-            headline: "ake my identity and expose me",
+            headline: "take my identity and expose me",
             description: "",
             answers: ["I can’t...", "I’m free and open", "Im private forever", "I made my family who accept me and know everything","If my family find out Ill be turned on, but disowned"] ,
             images: [], 
@@ -156,7 +156,216 @@
             link: [ ],
             url : "https://www.assuranceagency.com/Media/Default/blog/headers/Voluntary%20Series_Identity%20Theft.jpg",
             color: ["pink", "yellow"]
-            },
+        },
+        {
+            question: "Tell us a sexy confession.",
+            questionID:"confession", 
+            headline: "",
+            description: "",
+            answers: [] ,
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["blue", "purple"]
+        },
+        {
+            question: "What’s your favorite sexual activity?",
+            questionID:"favorite_activity", 
+            headline: "",
+            description: "",
+            answers: [] ,
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["blue", "purple"]
+        },
+        {
+            question: "What’s your most embarrassing sexual secret?",
+            questionID:"sexual_secret", 
+            headline: "",
+            description: "",
+            answers: [] ,
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["blue", "purple"]
+        },
+        {
+            question: "Have you ever cheated on a partner?",
+            questionID:"cheated", 
+            headline: "",
+            description: "",
+            answers: ["yes","no"] ,
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["black", "yellow"]
+        },
+        {
+            question: "Which of the following would you enjoy?",
+            questionID:"act_user_enjoys", 
+            headline: "",
+            description: "",
+            answers: ["Acting Like A Dog",
+            "Getting Fucked In The Ass",
+            "Worshipping Feet",
+            "Giving Away Money",
+            "Being Humiliated",
+            "Getting Tied Up",
+            "Being Spanked/Beaten",
+            "Wearing a Chastity Belt"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "Which of the following would you enjoy?",
+            questionID:"act_user_enjoys", 
+            headline: "",
+            description: "",
+            answers: ["Acting Like A Dog",
+            "Getting Fucked In The Ass",
+            "Worshipping Feet",
+            "Giving Away Money",
+            "Being Humiliated",
+            "Getting Tied Up",
+            "Being Spanked/Beaten",
+            "Wearing a Chastity Belt"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "What’s your mother’s maiden name?",
+            questionID:"mothers_maiden_name", 
+            headline: "",
+            description: "",
+            answers: [],
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "What city were you born in?",
+            questionID:"birth_city", 
+            headline: "",
+            description: "",
+            answers: [],
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "What is the name of your first pet?",
+            questionID:"first_pet", 
+            headline: "",
+            description: "",
+            answers: [],
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["red", "pink"]
+        },
+        {
+            question: "What was your childhood nickname?",
+            questionID:"childhodd_nickname", 
+            headline: "",
+            description: "",
+            answers: [],
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "What was the name of your elementary / primary school?",
+            questionID:"elementary_school", 
+            headline: "",
+            description: "",
+            answers: [],
+            images: [], 
+            inputfield: true,  
+            link: [ ],
+            url : "",
+            color: ["white", "black"]
+        },
+        {
+            question: "Which services would you like to receive? ",
+            questionID:"service_choice", 
+            headline: "",
+            description: "",
+            answers: ["Musical striptease burlesque",
+            "Vampiress / Schoolgirl Bondage and Teasing",
+            "Demon Kitten Furry Play",
+            "Big Tit Play",
+            "Forced feminist reading",
+            "Erotic hypnosis",
+            "Puppet peep show"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["yellow", "black"]
+        },
+        {
+            question: "Which performer would you like to meet? ",
+            questionID:"performer_choice", 
+            headline: "",
+            description: "",
+            answers: ["Petra Blair",
+            "Kiko",
+            "Violet Violent",
+            "Mistress Amandara",
+            "Goofy Toof",
+            "Vega Bonita"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+        {
+            question: "Do you want to feel?",
+            questionID:"do_you_want_to_feel", 
+            headline: "I’ll make you want",
+            description: "",
+            answers: ["yes", "yes please", "yes please Goddess", "Please, I beg you", "I won’t ever deserve but maybe the Mistress is charitable ","How much can I pay?"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+        {
+            question: "What do you need?",
+            questionID:"need", 
+            headline: "Don't Lie",
+            description: "",
+            answers: ["A way through", "A sense of peace", "Someone to take control", "Freedo"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+            
+            
+            
+            
             
     ]
  
@@ -276,8 +485,7 @@
 
         randomStyling(form, headline, question, answers, currentQuery.url);
 
-        form.style.display = "block"
-        document.body.append(form);
+        
 
     }
     function styling(element, color){
@@ -293,12 +501,12 @@
 
         if(window.innerWidth>750){
             form.style.width = 400 +"px"
-            form.style.height = "auto"
+         
             form.style.top = getRandomNumberBetween(0,windowHeight-400) +"px";
             form.style.left = getRandomNumberBetween(0,windowWidth-400)+"px";
         } else{
             form.style.width = 250 +"px"
-            form.style.height = 250 +"px"
+         
             form.style.top = getRandomNumberBetween(0,windowHeight-250) +"px";
             form.style.left = getRandomNumberBetween(0,windowWidth-250)+"px";
             form.style.top = 0;
@@ -311,6 +519,10 @@
         if(background.length > 1){
             form.style.background= `url("${background}")`;
         }
+
+
+        form.style.display = "block"
+        document.body.append(form);
        
     }
 
@@ -328,7 +540,7 @@
     }
   
 
-    setTimeout(showFirstPopUp, 30000);
+    setTimeout(showFirstPopUp, 35000);
 
 
 
