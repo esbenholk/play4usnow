@@ -331,7 +331,8 @@
             "Violet Violent",
             "Mistress Amandara",
             "Goofy Toof",
-            "Vega Bonita"],
+            "Vega Bonita",
+            "goddess Vannessa"],
             images: [], 
             inputfield: false,  
             link: [ ],
@@ -355,13 +356,123 @@
             questionID:"need", 
             headline: "Don't Lie",
             description: "",
-            answers: ["A way through", "A sense of peace", "Someone to take control", "Freedo"],
+            answers: ["A way through", "A sense of peace", "Someone to take control", "Freedom"],
             images: [], 
             inputfield: false,  
             link: [ ],
             url : "",
             color: ["red", "white"]
         },
+        {
+            question: "Do you believe in free will?",
+            questionID:"free_will", 
+            headline: "Don't Lie",
+            description: "",
+            answers: ["I am free to choose", "You tell me", "I am on new potency medication", "no", "everything is predetermined"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+        {
+            question: "Do you share your mastubatory fantasies with your friends?",
+            questionID:"sharing_mastubatory_fantasies", 
+            headline: "tag your friends",
+            description: "",
+            answers: ["I dont have friends", "i dont masturbate", "my friends already know I fantasize about them", "i dont share masturbation", "i share everything"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["yellow", "black"]
+        },
+        {
+            question: "",
+            questionID:"fighter", 
+            headline: "",
+            description: "choose your fighter",
+            answers: [],
+            images: ["https://about.fb.com/de/wp-content/uploads/sites/10/2019/01/mz.jpg?fit=4655%2C3102", "https://miro.medium.com/max/2732/1*ZBcYLFqrzsJrIfz3j2ialA.png"], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+        {
+            question: "How often do you climax yourself?",
+            questionID:"masturbation", 
+            headline: "",
+            description: "continue for more ways of gratifying yourself",
+            answers: ["around once a day", "a couple of times a week", "never","continously", "i am the only one who knows how to"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["red", "white"]
+        },
+        {
+            question: "Have you ever done potency enhancing drugs?",
+            questionID:"suplements", 
+            headline: "try erotic meditation today!",
+            description: "",
+            answers: ["viagra", "levitra", "Flibanserin", "does ghb count?"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["black", "grey"]
+        },
+        {
+            question: "Have you ever gotten hard or wet looking at art?",
+            questionID:"art_turn_on", 
+            headline: "try gratification today! FREE sign up!",
+            description: "",
+            answers: ["yes", "no", "this turns me on", "art is for bougies", "data turns me on", "i like it when art takes control"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["black", "grey"]
+        },
+        {
+            question: "",
+            questionID:"rorschak", 
+            headline: "pictures leaked of things you can create association with",
+            description: "which ink blot depicts your genitalia?",
+            answers: [],
+            images: ["https://img.buzzfeed.com/buzzfeed-static/static/2019-01/14/12/enhanced/buzzfeed-prod-web-06/enhanced-26805-1547485493-3.jpg?downsize=600:*&output-format=auto&output-quality=auto", "https://img.buzzfeed.com/buzzfeed-static/static/2019-01/14/12/enhanced/buzzfeed-prod-web-01/enhanced-20876-1547485629-1.jpg?downsize=600:*&output-format=auto&output-quality=auto"], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["black", "grey"]
+        },
+        {
+            question: "do you agree with the mask mandate?",
+            questionID:"mask", 
+            headline: "mussle your mouth",
+            description: "",
+            answers: ["I wear mask", "I dont wear mask", "I like it when the state tells me what to do", "I unwillingly wear mask", "make me"],
+            images: [], 
+            inputfield: false,  
+            link: [ ],
+            url : "",
+            color: ["black", "grey"]
+        },
+
+        {
+            question: "CHOOSE YOUR PATH",
+            questionID:"pathway", 
+            headline: "this data will be stored",
+            description: "didnt we tell u we would be watching? ",
+            answers: [],
+            images: ["https://www.clinical-depression.co.uk/sites/clinical-depression.co.uk/files/learning-path.png","https://st.depositphotos.com/1962533/1873/i/950/depositphotos_18731293-stock-photo-digital-highway.jpg", "https://cdn.cheatcc.com/dispatches/large/d04201811.jpg"],
+            inputfield: false,
+            link: [],
+            url : "https://image.shutterstock.com/z/stock-photo-sexy-closeup-portrait-of-handsome-topless-male-model-with-beautiful-eyes-sexy-man-or-muscular-747567787.jpg",
+
+        }, 
+            
             
             
             
@@ -369,7 +480,7 @@
             
     ]
  
-    let colors = ["red","white", "#e04ac7", "#00ff19"]
+    let colors = ["red", "#e04ac7", "#00ff19", "#000000", "#6ba1ff", "#00fbbc", "#ff9d00", "#fe6fff"]
   
    
     let answer = "";
@@ -414,6 +525,7 @@
         let currentQueryIndex = Math.floor(Math.random()*queryarray.length);
         let currentQuery = queryarray[currentQueryIndex];
         queryarray.splice( currentQueryIndex, 1);
+        console.log(queryarray, queryarray.length);
 
         question.innerHTML = currentQuery.question;
         if(currentQuery.headline){
@@ -445,8 +557,11 @@
                
                 let image = document.createElement("img");
                 image.src = currentQuery.images[index]
-                // imagebutton.style.background= `url("${currentQuery.images[index]}")`;
                 imagebutton.append(image); 
+                if(currentQuery.images.length>2){
+                    imagebutton.style.width = "100px"
+                }
+               
                 answers.append(imagebutton);
                 imagebutton.addEventListener("click", function(ev){
                     answer = currentQuery.images[index];
@@ -513,6 +628,8 @@
             form.style.left =0;
         }
 
+        form.style.background = "";
+
         let backgroundColor = pickColor(colors);
         form.style.backgroundColor = backgroundColor;
     
@@ -535,12 +652,12 @@
     function pickColor(colors){
         let index = Math.floor(Math.random() * colors.length);
         let color = colors[index]
-        queries.splice( index, 1);
+        queries.splice( index, 0);
         return color
     }
   
 
-    setTimeout(showFirstPopUp, 35000);
+    setTimeout(showFirstPopUp, 0);
 
 
 

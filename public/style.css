@@ -781,6 +781,12 @@ color: red;
     transform: translate(-50%, -50%);
 
   }
+  .recaptcha-grid-container{
+
+    width: 100%;
+    max-width: 10000px;
+
+  }
   .terms{
     width: auto;
     height:auto;
@@ -814,7 +820,9 @@ color: red;
   }
   .payment_description{
 
-    max-width: 80%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
 
   }
   .headline-logo{
@@ -838,5 +846,15 @@ color: red;
     letter-spacing: -0em;
     line-height: 0.55em;
     -webkit-text-stroke: 1px black;
+  }
+  .payment_description.right{
+    text-align: center;
+  }
+  .payment_description.center{
+    text-align: center;
+  }
+  .payment_description.left{
+    text-align: center;
+  
   }
 }

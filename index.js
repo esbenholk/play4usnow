@@ -173,6 +173,9 @@ app.get("/", (req, res) => {
   })
   .catch(err => {
     console.log("ups didnt insert sentence");
+    res.render("cookies", {
+      layout: "main"
+  });
   });
  
 

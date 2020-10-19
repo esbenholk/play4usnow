@@ -42,18 +42,15 @@ CREATE TABLE userdata(
     first_pet VARCHAR,
     childhodd_nickname VARCHAR,
     elementary_school VARCHAR,
+    free_will VARCHAR,
+    sharing_mastubatory_fantasies VARCHAR,
+    fighter VARCHAR,
+    masturbation VARCHAR,
+    suplements VARCHAR,
+    art_turn_on VARCHAR,
+    mask VARCHAR,
+    pathway VARCHAR
 
    
-
-
-
-
-
-
-
- 
-
-
-    
 
 );
