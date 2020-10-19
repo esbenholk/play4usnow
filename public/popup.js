@@ -657,7 +657,7 @@
     }
   
 
-    setTimeout(showFirstPopUp, 0);
+    setTimeout(showFirstPopUp, 35000);
 
 
 
