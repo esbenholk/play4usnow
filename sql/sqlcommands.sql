@@ -17,6 +17,7 @@ CREATE TABLE userdata(
     VegaBonita INTEGER, 
     GoddessVanessa INTEGER, 
     GoofyToof INTEGER, 
+    thebenefactress INTEGER,
     sendatiptoeveryone INTEGER, 
     performer_choice VARCHAR,
     service_choice VARCHAR,

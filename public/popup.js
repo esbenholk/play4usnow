@@ -94,12 +94,12 @@ let queries = [
     {
         question: "CLICK HERE IF YOU LIKE SEXY FEET",
         questionID:"follows_link_to_foot_porn",
-        headline: "this is an advertisement!",
+        headline: "this is an advertisement! this is an advertisement! this is an advertisement!",
         description: "",
         answers: [],
         images: [],
         inputfield: false,
-        link: ["http://queerporn.tv/wp/?s=foot","https://play4usnow.s3.amazonaws.com/feet2.gif"],
+        link: ["https://www.pornblade.com/category/foot-porn/","https://play4usnow.s3.amazonaws.com/feet2.gif"],
         url : "",
         color: ["white", "red"]
     },
@@ -122,7 +122,7 @@ let queries = [
     },
     {
         question: "Wanna be our dog?",
-        questionID:"being_a_dog",
+        questionID:"desire_to _be_a_dog",
         headline: "",
         description: "",
         answers: ["Woof", "I want to be caged", "Can I sleep at the end of your bed?", "I need training", "I think I’m a cat", "I like being a human"],
@@ -156,8 +156,62 @@ let queries = [
         url : "",
         color: ["blue", "purple"]
     },
+   {
+
+        question: "What’s the biggest lie you’ve told?",
+        questionID:"told_a_lie",
+        headline: "",
+        description: "",
+        answers: [] ,
+        images: [],
+        inputfield: true, 
+        link: [ ],
+        url : "",
+        color: ["blue", "purple"]
+    },
+   {
+
+        question: "Tell us something your family doesn’t know about you.",
+        questionID:"secret_kept_from_your_family",
+        headline: "",
+        description: "",
+        answers: [] ,
+        images: [],
+        inputfield: true, 
+        link: [ ],
+        url : "",
+        color: ["blue", "purple"]
+    },
+   {
+
+        question: "What kind of crimes have you committed?",
+        questionID:"crime_committed",
+        headline: "",
+        description: "",
+        answers: [] ,
+        images: [],
+        inputfield: true, 
+        link: [ ],
+        url : "",
+        color: ["blue", "purple"]
+    },
+   {
+
+        question: "What addictions have you had?",
+        questionID:"addictions",
+        headline: "",
+        description: "",
+        answers: [] ,
+        images: [],
+        inputfield: true, 
+        link: [ ],
+        url : "",
+        color: ["blue", "purple"]
+    },
+
+
 {
-        question: "What’s your biggest life regret?",
+        question: "What’s your life regret?",
         questionID:"life_regret",
         headline: "",
         description: "",
@@ -243,6 +297,21 @@ let queries = [
         url : "",
         color: ["white", "black"]
     },
+
+   {
+
+        question: "What’s the worst thing you’ve done to another person?",
+        questionID:"harming_another_person",
+        headline: "",
+        description: "",
+        answers: [] ,
+        images: [],
+        inputfield: true, 
+        link: [ ],
+        url : "",
+        color: ["blue", "purple"]
+    },
+
     {
         question: "What’s your mother’s maiden name?",
         questionID:"mothers_maiden_name",
@@ -332,7 +401,7 @@ let queries = [
         "Mistress Amandara",
         "Goofy Toof",
         "Vega Bonita",
-        "goddess Vannessa"],
+        "Goddess Vanessa"],
         images: [],
         inputfield: false, 
         link: [ ],
@@ -394,6 +463,7 @@ let queries = [
        
        
 ]
+
 
  
     let colors = ["red", "#e04ac7", "#00ff19", "#000000", "#6ba1ff", "#00fbbc", "#ff9d00", "#fe6fff"]

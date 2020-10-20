@@ -268,6 +268,8 @@ app.post("/payment", (req,res)=>{
         value = value + result.rows[0].goofytoof
       } else if(column === "sendatiptoeveryone"){
         value = value + result.rows[0].sendatiptoeveryone
+      } else if(column === "thebenefactress"){
+        value = value + result.rows[0].thebenefactress
       }
 
       console.log(value, column, result.rows[0]);
