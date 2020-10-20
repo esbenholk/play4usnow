@@ -223,6 +223,23 @@ app.post("/ajax", (req, res) => {
  
 });
 
+app.post("/email", (req, res) => {
+
+  let value = req.body.email;
+
+  console.log("processing email", value);
+    databaseActions.updateEmail(value, req.cookies.id).then(result => {
+      console.log("did insert email", result);
+     
+     })
+     .catch(err => {
+       console.log("ups didnt do email insert", err);
+     });
+  
+ 
+ 
+});
+
 app.post("/payment", (req,res)=>{
   
   let value = parseInt(req.body.amount); 

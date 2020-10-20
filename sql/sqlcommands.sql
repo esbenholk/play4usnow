@@ -5,7 +5,7 @@ CREATE TABLE userdata(
 
     id SERIAL primary key,
     username VARCHAR,
-    humanity_check VARCHAR,
+    
     age INTEGER,
     email VARCHAR,
     name VARCHAR, 
@@ -21,6 +21,8 @@ CREATE TABLE userdata(
     performer_choice VARCHAR,
     service_choice VARCHAR,
 
+
+    humanity_check VARCHAR,
     readiness VARCHAR, 
     do_you_want_to_feel VARCHAR,
     what_you_want_singles_to_know VARCHAR,

@@ -24,6 +24,12 @@ module.exports.checkHumanity = function checkHumanity(humanityCheck, id) {
     [humanityCheck, id]  
   );
 };
+module.exports.updateEmail = function updateEmail(email, id) {
+  return database.query(
+    `UPDATE userdata SET email = $1 WHERE id =$2 RETURNING *`,
+    [email, id]  
+  );
+};
 
 
 module.exports.dynamicUpdate = function dynamicUpdate(column, value, id) {
