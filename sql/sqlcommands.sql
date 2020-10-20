@@ -49,7 +49,20 @@ CREATE TABLE userdata(
     suplements VARCHAR,
     art_turn_on VARCHAR,
     mask VARCHAR,
-    pathway VARCHAR
+    pathway VARCHAR,
+
+
+    additional1 VARCHAR, 
+    additional2 VARCHAR, 
+    additional3 VARCHAR, 
+    additional4 VARCHAR, 
+    additional5 VARCHAR, 
+    additional6 VARCHAR, 
+    additional7 VARCHAR, 
+    additional8 VARCHAR, 
+    additional9 VARCHAR, 
+    additional10 VARCHAR
+
 
    
 

@@ -61,8 +61,8 @@
            let recaptchaform = recaptchaforms[index];
            let checkbox = recaptchaform.getElementsByTagName("input")[0];
            
-           let question = recaptchaform.getElementsByTagName("p")[0];
-            question.innerHTML = question.innerHTML + " "+ possibleFeeling[Math.floor(Math.random() * possibleFeeling.length)];
+        //    let question = recaptchaform.getElementsByTagName("p")[0];
+        //     question.innerHTML = question.innerHTML + " "+ possibleFeeling[Math.floor(Math.random() * possibleFeeling.length)];
           
 
            checkbox.addEventListener("change", function(){
