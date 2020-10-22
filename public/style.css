@@ -479,6 +479,14 @@ input::placeholder {
   color: white;
   font-family: 'Arial';
 }
+.performer a{
+  color: white;
+  text-decoration: none;
+}
+.performer a:hover{
+  color: red;
+  text-decoration: underline;
+}
 .performer_name{
   font-family: 'Tarrget';
   max-width: 80%;
@@ -848,7 +856,7 @@ color: red;
     bottom: 7%;
     font-family: 'Tarrget';
     color: white;
-    text-shadow: 10px 7px 2px rgba(255, 0, 0, 1);
+    text-shadow: 2px 2px 1px rgba(255, 0, 0, 1);
     font-size: 3em;
     text-align: center;
     width: 100%;
