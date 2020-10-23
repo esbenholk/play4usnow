@@ -41,23 +41,25 @@
         </div>
       
 
-        <div class="payment">
+        {{!-- <div class="payment">
             {{>payment name=name}}
-        </div>
+        </div> --}}
 
 
         <div class="performercontainer">
+            <h1 class="step-headline">BUY TICKETS FOR LIVE PERFORMANCE</h1>
+
             <div class="row changing_to_column">
                 <div class="performers column">
                         {{#performers}}
-                            {{>performer name=name url=url action=action service=service information=information}}
+                            {{>performer artist_name=artist_name url=url action=action service=service information=information username=...name}}
         
                         {{/performers}}
                 </div>
 
                 <div class="performers column">
                         {{#performers2}}
-                            {{>performer name=name url=url action=action service=service information=information}}
+                            {{>performer artist_name=artist_name url=url action=action service=service information=information username=...name}}
 
                         {{/performers2}}
                 </div>

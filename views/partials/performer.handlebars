@@ -1,8 +1,23 @@
-<div class="performer">
-        {{>tips performer_name=name performer_index=@index url=url}}
-        <a href="{{website}}" target="___blank"><img class="thumbnail"src="{{url}}">
-        <h2 class="performer_name">{{name}}</h2>
-        </a>
-        <p class="performer_description">{{service}}</p>
-        {{!-- <p>{{information}}</p> --}}
+
+<div style="position: relative;">
+        <div class="performer">
+                <div>
+                <a href="{{website}}" target="___blank"><img class="thumbnail"src="{{url}}">
+                <h2 class="performer_name">{{artist_name}}</h2>
+                </a>
+                </div>
+                <p class="performer_description">{{service}}</p>
+
+
+        {{>tips performer_name=artist_name performer_index=@index url=url}}
+
+     
+       
+      
+        {{>ticket performer_name=artist_name performer_index=@index url=url username=username}}
+        </div>
+
+ 
+
+     
 </div>

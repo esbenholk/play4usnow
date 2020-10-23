@@ -45,20 +45,25 @@
 						</table>
 					</div>
 				</div>
-				<form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; display: flex; justify-content: center; align-items:center" action="https://maillist-manage.eu/weboptin.zc" target="_zcSignup">
+				<form method="POST" id="zcampaignOptinForm" style="margin: 0px; width: 100%; display: flex; justify-content: center; align-items:flex-start" action="https://maillist-manage.eu/weboptin.zc" target="_zcSignup">
 					<div style="background-color: rgb(255, 235, 232); padding: 10px; color: rgb(210, 0, 0); font-size: 11px; margin: 0px 0px 0px; border: 1px solid rgb(255, 217, 211); opacity: 1; display: none" id="errorMsgDiv">Please correct the marked field(s) below.</div>
-					<div style="position: relative; margin: 0px 0 0px; width: auto; height: 40px; display: inline-block">
+					<div style="position: relative; margin: 0px 0 0px; width: auto; height: auto; display: inline-block">
 						<div id="Zc_SignupSuccess" style="position: absolute; width: 100%; background-color: white;  word-break: break-all; opacity: 1; display: none">
 				
 							<div style="display: table-cell">
 								<span id="signupSuccessMsg" style="color: rgb(255, 0, 0); font-family: sans-serif; font-size: 13px; line-height: 30px; display: block"></span>
 							</div>
 						</div>
-						<input type="text" style="font-size:20px; border: 2px solid rgb(255, 0, 0); background-color: white; border-radius: 50px 0 0 50px; width: 100%;  height: 100%; z-index: 4; outline: none; padding: 5px 10px; color: rgb(0, 0, 0); text-align: left; font-family: &quot;Arial&quot;; box-sizing: border-box" placeholder=", write your email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+			
+
+						<input type="text" style="font-size:20px; border: 2px solid rgb(255, 0, 0); background-color: white; border-radius: 50px 0 0 50px; width: 100%;  height: 40px; z-index: 4; outline: none; padding: 5px 10px; color: rgb(0, 0, 0); text-align: left; font-family: &quot;Arial&quot;; box-sizing: border-box" placeholder=", write your email" changeitem="SIGNUP_FORM_FIELD" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL">
+						<p class="email-description">*check spam folder</p>
+					
 					</div>
 					<div style="position: relative; width: auto; height: 40px; margin: 0 0 0px; text-align: left; display: inline-block">
 						<input type="button" style="text-align: center; width: 100%; min-width: 100px; height: 100%; z-index: 5; border: 0; color: white; cursor: pointer; outline: none; font-size: 20px; background-color: rgb(255, 0, 0); padding: 5%; border-radius: 0 50px 50px 0" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="SUBMIT">
 					</div>
+
 					<input type="hidden" id="fieldBorder" value="">
 					<input type="hidden" id="submitType" name="submitType" value="optinCustomView">
 					<input type="hidden" id="emailReportId" name="emailReportId" value="">
@@ -79,6 +84,8 @@
 
 					<span style="display: none" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
 				</form>
+				
+
 			</div>
 		</div>
 	</div>

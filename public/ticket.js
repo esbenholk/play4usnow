@@ -1,39 +1,38 @@
 
-let tipsButtonTogglers = $(".tipButtonToggler");
-for (let index = 0; index < tipsButtonTogglers.length; index++) {
-  const element = tipsButtonTogglers[index];
+let ticketButtonTogglers = $(".ticketButtonToggler");
+for (let index = 0; index < ticketButtonTogglers.length; index++) {
+  const element = ticketButtonTogglers[index];
   element.addEventListener("click", function(ev){
-    console.log(element);
     ev.target.parentNode.children[1].style.display = "block";
   
   })
 }
-let tipsButtonUntogglers = $(".tipButtonUntoggler");
-for (let index = 0; index < tipsButtonUntogglers.length; index++) {
-  const element = tipsButtonUntogglers[index];
+let ticketButtonUntogglers = $(".ticketButtonUntoggler");
+for (let index = 0; index < ticketButtonUntogglers.length; index++) {
+  const element = ticketButtonUntogglers[index];
   element.addEventListener("click", function(ev){
-    ev.target.parentNode.style.display = "none";
+    closeTipping();
   
   })
 }
 
 
-$(".tipButton").each(function(index){
+$(".ticketButton").each(function(index){
    createTipButton(index);
   });
 
 
 async function createTipButton(index){
-    let tipButton = await $(".tipButton")[index]
-    initPayPalButton(tipButton);
+    let ticketButton = await $(".ticketButton")[index]
+    initPayPalButton(ticketButton);
 }
 
 function initPayPalButton(element) {
-  var description = element.querySelector('#tip-button-container #description');
-  var amount = element.querySelector('#tip-button-container #amount');
+  var description = element.querySelector('#ticket-button-container #description');
+//   var amount = 8;
 
 
-  var elArr = [description, amount];
+  var elArr = [description];
 
 
   var purchase_units = [];
@@ -57,7 +56,7 @@ function initPayPalButton(element) {
     },
 
     onInit: function (data, actions) {
-      actions.disable();
+    //   actions.disable();
 
       elArr.forEach(function (item) {
         item.addEventListener('keyup', function (event) {
@@ -74,7 +73,7 @@ function initPayPalButton(element) {
     onClick: function () {
   
       purchase_units[0].description = description.value;
-      purchase_units[0].amount.value = amount.value;
+      purchase_units[0].amount.value = 8;
 
 
 
@@ -118,7 +117,7 @@ function updateUser(details, description, amount){
 }
 
 function closeTipping(){
-  let tipcontainer = $(".tipButton");
+  let tipcontainer = $(".ticketButton");
   for (let index = 0; index < tipcontainer.length; index++) {
     const element = tipcontainer[index];
     element.style.display = "none";

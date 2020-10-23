@@ -643,7 +643,7 @@ let queries = [
     }
   
 
-    setTimeout(showFirstPopUp, 35000);
+    // setTimeout(showFirstPopUp, 35000);
 
 
 
@@ -665,9 +665,10 @@ let queries = [
 
         if(queries.length>0){
             if(answer === "too shy to answer"){
-                showPopUp();
+             
+                setTimeout(showPopUp, 3000); 
             } else {
-                setTimeout(showPopUp, 2000); 
+                setTimeout(showPopUp, 15000); 
             }
         }
      
