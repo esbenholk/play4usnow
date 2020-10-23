@@ -991,11 +991,15 @@ color: red;
   .ticketButton,
   .tipButton{
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(0%,0%);
+    height: auto;
+    width: auto;
+    max-width: 100%;
     z-index: 9999;
-    width: 90%;
-    height: 90%;
+
+  
   }
   .countdown,
   #countdown{
