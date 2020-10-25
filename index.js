@@ -237,7 +237,6 @@ app.post("/email", (req, res) => {
      });
   
  
- 
 });
 
 app.post("/payment", (req,res)=>{
