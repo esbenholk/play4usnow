@@ -89,7 +89,7 @@ function initPayPalButton(element) {
       return actions.order.capture().then(function (details) {
         alert('Transaction completed!');
 
-        updateUser(details, description.value, amount.value)
+        updateUser(details, description.value, 8)
         closeTipping();
        
       });
