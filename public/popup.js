@@ -511,7 +511,6 @@ let queries = [
         let currentQueryIndex = Math.floor(Math.random()*queryarray.length);
         let currentQuery = queryarray[currentQueryIndex];
         queryarray.splice( currentQueryIndex, 1);
-        console.log(queryarray, queryarray.length);
 
         question.innerHTML = currentQuery.question;
         if(currentQuery.headline){
@@ -565,7 +564,6 @@ let queries = [
             answers.append(button);
             button.addEventListener("click", function(ev){
                 answer = inputfield.value;
-                console.log("inputfield", answer);
             })
          
         } else if(currentQuery.link.length>0){
@@ -666,9 +664,9 @@ let queries = [
         if(queries.length>0){
             if(answer === "too shy to answer"){
              
-                setTimeout(showPopUp, 3000); 
+                setTimeout(showPopUp, 2000); 
             } else {
-                setTimeout(showPopUp, 15000); 
+                setTimeout(showPopUp, 8000); 
             }
         }
      

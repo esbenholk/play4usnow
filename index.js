@@ -229,7 +229,7 @@ app.post("/email", (req, res) => {
 
   console.log("processing email", value);
     databaseActions.updateEmail(value, req.cookies.id).then(result => {
-      console.log("did insert email", result);
+      console.log("did insert email", result.rows[0].email);
      
      })
      .catch(err => {

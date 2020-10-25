@@ -133,6 +133,26 @@
         
 	 });
 
+	document.getElementById("EMBED_FORM_EMAIL_LABEL").addEventListener("keypress", function(event) {
+			// Number 13 is the "Enter" key on the keyboard
+
+
+			if (event.keyCode === 13) {
+				// Cancel the default action, if needed
+				event.preventDefault();
+				let email = $("#EMBED_FORM_EMAIL_LABEL").val()
+				
+				$.post(
+					"/email",
+					{
+						email: email,
+						_csrf : $('meta[name="_csrf"]').attr('content')
+					}, function (data) {
+						console.log(data);
+				});
+			}
+			});
+
 
 
 
