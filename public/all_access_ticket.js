@@ -1,18 +1,18 @@
 
-let ticketButtonTogglers = $(".ticketButtonToggler");
-for (let index = 0; index < ticketButtonTogglers.length; index++) {
-  const element = ticketButtonTogglers[index];
+let all_access_ticketButtonTogglers = $(".all_access_ticketButtonToggler");
+for (let index = 0; index < all_access_ticketButtonTogglers.length; index++) {
+  const element = all_access_ticketButtonTogglers[index];
   element.addEventListener("click", function(ev){
-    ev.target.parentNode.children[1].style.display = "block";
+    console.log("click open all access", ev.target.parentNode);
+    ev.target.parentNode.children[2].style.display = "block";
   
   })
 }
-let ticketButtonUntogglers = $(".ticketButtonUntoggler");
-for (let index = 0; index < ticketButtonUntogglers.length; index++) {
-  const element = ticketButtonUntogglers[index];
+let all_access_ticketButtonUntogglers = $(".all_access_ticketButtonUntoggler");
+for (let index = 0; index < all_access_ticketButtonUntogglers.length; index++) {
+  const element = all_access_ticketButtonUntogglers[index];
   element.addEventListener("click", function(ev){
-    console.log("clicking to untoggle ticket");
-    let tipcontainer = $(".ticketButton");
+    let tipcontainer = $(".all_access_ticketButton");
     for (let index = 0; index < tipcontainer.length; index++) {
       const element = tipcontainer[index];
       element.style.display = "none";
@@ -24,18 +24,18 @@ for (let index = 0; index < ticketButtonUntogglers.length; index++) {
 }
 
 
-$(".ticketButton").each(function(index){
+$(".all_access_ticketButton").each(function(index){
    createTipButton(index);
   });
 
 
 async function createTipButton(index){
-    let ticketButton = await $(".ticketButton")[index]
+    let ticketButton = await $(".all_access_ticketButton")[index]
     initPayPalButton(ticketButton);
 }
 
 function initPayPalButton(element) {
-  var description = element.querySelector('#ticket-button-container #description');
+  var description = element.querySelector('#all_access_ticket-button-container #description');
 //   var amount = 8;
 
 
@@ -97,13 +97,13 @@ function initPayPalButton(element) {
         alert('Transaction completed!');
 
         updateUser(details, description.value, 8)
-        let tipcontainer = $(".ticketButton");
-        for (let index = 0; index < tipcontainer.length; index++) {
-          const element = tipcontainer[index];
-          element.style.display = "none";
-        
-          
-        }
+        let tipcontainer = $(".all_access_ticketButton");
+            for (let index = 0; index < tipcontainer.length; index++) {
+              const element = tipcontainer[index];
+              element.style.display = "none";
+            
+              
+            }
        
       });
     },

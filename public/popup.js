@@ -641,7 +641,7 @@ let queries = [
     }
   
 
-    setTimeout(showFirstPopUp, 35000);
+    // setTimeout(showFirstPopUp, 35000);
 
 
 
