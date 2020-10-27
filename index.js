@@ -217,7 +217,7 @@ app.get("/destruction", (req, res) => {
 //   });
  
 
-});
+// });
 
 
 
