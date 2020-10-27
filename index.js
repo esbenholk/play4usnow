@@ -180,6 +180,45 @@ app.get("/", (req, res) => {
  
 
 });
+app.get("/destruction", (req, res) => {
+  databaseActions
+  .getEveryone()
+  .then(result => {
+
+    res.render("destruction", {
+        layout: "destruction",
+        users: result.rows
+    });
+  
+  })
+  .catch(err => {
+    res.render("countdown", {
+      layout: "main"
+  });
+  });
+ 
+
+});
+// app.get("/datadisplay", (req, res) => {
+//   databaseActions
+//   .getEveryone()
+//   .then(result => {
+
+//     res.render("datadisplay", {
+//         layout: "animationdisplay",
+//         users: result.rows
+//     });
+  
+//   })
+//   .catch(err => {
+//     res.render("countdown", {
+//       layout: "main"
+//   });
+//   });
+ 
+
+});
+
 
 
 app.get("/countdown", (req, res)=>{

@@ -8,6 +8,9 @@ var database = spicedPg(
 module.exports.getUser= function getUser(id) {
   return database.query(`SELECT * FROM userdata WHERE id=$1`, [id]);
 };
+module.exports.getEveryone = function getEveryone() {
+  return database.query(`SELECT * FROM userdata`);
+};
 
 /////CREATING USERNAME AND ID
 module.exports.createUser = function createUser(username, age) {
