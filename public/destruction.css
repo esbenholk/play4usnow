@@ -96,8 +96,9 @@ canvas {display: block;}
   opacity: 0;
 
 }
-.canvas{
-  position: relative;
+canvas{
+  position: fixed;
+  top:0;
   width: 100%;
   height: 100%;
 }
@@ -107,6 +108,9 @@ canvas {display: block;}
   opacity: 1;
 }
 
+.firegif{
+  z-index: 9999999;
+}
 
 .fire {
   font-size: 24px;
