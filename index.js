@@ -136,8 +136,6 @@ app.post("/cookies",  (req, res) => {
     
     
   } else {
-   
-
     databaseActions
     .getEveryone()
     .then(result => {

@@ -9,7 +9,8 @@ https://en.wikipedia.org/wiki/Matrix_digital_rain
 
 
 
-
+let users = document.getElementsByClassName("user");
+let sentences = []
 
 const s = (p) => {  
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -37,6 +38,24 @@ const s = (p) => {
       m = new Matrix();
       control = new Control();
       m.run();
+      
+      for (let index = 0; index < users.length; index++) {
+          const element = users[index];
+          let quotes = element.getElementsByTagName("li");
+          console.log("setup", quotes.length);
+         
+            for (let index = 0; index < quotes.length; index++) {
+                  let quote= quotes[index].innerHTML
+                  console.log("set up quote", quote);
+                  if(!quote.includes("too shy to answer")){
+                     sentences.push(quote)
+                  } 
+              }
+
+          
+      
+      }
+      shuffle(sentences);
     }
     
     p.windowResized = () => {
@@ -431,7 +450,7 @@ const s = (p) => {
         
         if (this.newWord) {
           const quote = getSentence();
-          console.log("will return quote", quote);
+          console.log("quote to be written", quote, sentences);
          
           const maxChars = p.width / FONT_SIZE;
           if (quote.length < maxChars) {
@@ -673,41 +692,17 @@ const s = (p) => {
 
 
 function getSentence(){
-   
-    let users = document.getElementsByClassName("user");
-    
-    
-    
-        for (let index = 0; index < users.length; index++) {
-			const element = users[index];
-            let quotes = element.getElementsByTagName("li");
-            shuffle(quotes);
-            if(quotes.length>0){
-                for (let index = 0; index < quotes.length; index++) {
-                    let quote= quotes[index].innerHTML
-                    if(quote.includes("too shy to answer")){
-                        quotes[index].parentNode.removeChild(quotes[index]) 
-                        getSentence();
-                    } else{
-                        setTimeout( function(){
-                            quotes[index].parentNode.removeChild(quotes[index]) 
-                        },  1000)
-                        
-                        
-                       
-                        return quote;
-                    }
-                
-                }
 
-            } else{
-                return "www.play4usnow.com"
-            }
-		
-		}
-    
+   if(sentences.length > 0){
+       let index = Math.floor(Math.random() * sentences.length);
+       let sentence = sentences[index]
+       sentences.splice(index, 1);
+       return sentence
+   } else {
+       return "www.play4usnow.com"
+   }
 
-   
+    
 }
 
 function shuffle(array) {
