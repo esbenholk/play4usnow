@@ -165,7 +165,13 @@ app.use((request, response, next) => {
 });
 
 
-
+app.get("/restart", (req, res)=>{
+  res.clearCookie("authenticated");
+  console.log(res.cookies);
+  res.render("cookies", {
+    layout: "main"
+});
+})
 
 app.get("/", (req, res) => {
   databaseActions
