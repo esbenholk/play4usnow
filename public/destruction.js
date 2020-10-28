@@ -27,6 +27,8 @@ const s = (p) => {
     p.setup = () => {
       p.frameRate(60);    
       const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+ 
+
       canvas.id("mycanvas");
       p.colorMode(p.HSB, 4, 100, 100, 100);  
       p.textFont("monospace", FONT_SIZE);
@@ -217,7 +219,7 @@ const s = (p) => {
         this.pos.add(p.createVector(0, 4));   
   
         const nextSymbolY = this.symbolCount * FONT_SIZE;
-        const middle = p.height / 2;
+        const middle = p.height / 3;
         const { x, y } = this.pos;
         if (this.middleLetter) {
           if (y < middle && y > nextSymbolY) {
@@ -422,11 +424,7 @@ const s = (p) => {
         this.name = 'Words';
       }
   
-      static get quotes() {
-        
-        return getData();
-        // return ["What is real?", "Fear, doubt, and disbelief", "Free your mind", "Follow the white rabbit", "The Matrix Has You...", "Déjà vu", "The sound of inevitability", "Only human", "Knowing the path - Walking the path", "There is no spoon", "It will find you if you want it to", "Control", "Wake up", "Knock, knock", "The answer is out there", "Don't think you are, know you are", "You've been living in a dreamworld", "I must get out of here", "I can only show you the door. You're the one that has to walk through it", "Throughout human history, we have been dependent on machines to survive", "A world without rules and controls, without borders or boundaries", "A world where anything is possible",];
-      }
+     
   
       draw() {
         p.background(0, 0, 0);
@@ -676,26 +674,60 @@ const s = (p) => {
 
 function getSentence(){
    
-	let users = document.getElementsByClassName("user");
-		for (let index = 0; index < users.length; index++) {
+    let users = document.getElementsByClassName("user");
+    
+    
+    
+        for (let index = 0; index < users.length; index++) {
 			const element = users[index];
             let quotes = element.getElementsByTagName("li");
-            console.log(quotes);
-			for (let index = 0; index < quotes.length; index++) {
-				let quote= quotes[index].innerHTML
-                if(quote.includes("too shy to answer")){
-                    quotes[index].parentNode.removeChild(quotes[index]) 
-
-                } else{
-                    quotes[index].parentNode.removeChild(quotes[index]) 
-                    return quote;
+            shuffle(quotes);
+            if(quotes.length>0){
+                for (let index = 0; index < quotes.length; index++) {
+                    let quote= quotes[index].innerHTML
+                    if(quote.includes("too shy to answer")){
+                        quotes[index].parentNode.removeChild(quotes[index]) 
+                        getSentence();
+                    } else{
+                        setTimeout( function(){
+                            quotes[index].parentNode.removeChild(quotes[index]) 
+                        },  1000)
+                        
+                        
+                       
+                        return quote;
+                    }
+                
                 }
-			
-			}
+
+            } else{
+                return "www.play4usnow.com"
+            }
+		
 		}
+    
+
    
 }
 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 
 
 

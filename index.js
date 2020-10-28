@@ -136,7 +136,23 @@ app.post("/cookies",  (req, res) => {
     
     
   } else {
-      res.send(`<h1>no data = no fun</h1>`);
+   
+
+    databaseActions
+    .getEveryone()
+    .then(result => {
+  
+      res.render("nofun", {
+        layout: "destruction",
+        users: result.rows
+      });
+    
+    })
+    .catch(err => {
+      res.render("countdown", {
+        layout: "main"
+    });
+    });
   }
 });
 
@@ -199,25 +215,25 @@ app.get("/destruction", (req, res) => {
  
 
 });
-// app.get("/datadisplay", (req, res) => {
-//   databaseActions
-//   .getEveryone()
-//   .then(result => {
+app.get("/data", (req, res) => {
+  databaseActions
+  .getEveryone()
+  .then(result => {
 
-//     res.render("datadisplay", {
-//         layout: "animationdisplay",
-//         users: result.rows
-//     });
+    res.render("datadisplay", {
+        layout: "destruction",
+        users: result.rows
+    });
   
-//   })
-//   .catch(err => {
-//     res.render("countdown", {
-//       layout: "main"
-//   });
-//   });
+  })
+  .catch(err => {
+    res.render("countdown", {
+      layout: "main"
+  });
+  });
  
 
-// });
+});
 
 
 

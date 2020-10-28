@@ -96,12 +96,6 @@ canvas {display: block;}
   opacity: 0;
 
 }
-canvas{
-  position: fixed;
-  top:0;
-  width: 100%;
-  height: 100%;
-}
 
 
 .visible{
@@ -109,6 +103,11 @@ canvas{
 }
 
 .firegif{
+  position: fixed;
+  bottom: 0;
+  max-height: 20%;
+  width:100%;
+  object-fit: fill;
   z-index: 9999999;
 }
 

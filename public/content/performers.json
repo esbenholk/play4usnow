@@ -8,7 +8,8 @@
         "actions": "",
         "information" : "",
         "url": "https://play4usnow.s3.amazonaws.com/petra.gif",
-        "website": "http://petrablairxxx.com"
+        "website": "http://petrablairxxx.com",
+        "cantip": true
     },
     {
         "artist_name": "Kiko",
@@ -16,7 +17,8 @@
         "actions": "",
         "information" : "",
         "url": "https://play4usnow.s3.amazonaws.com/sickkitty.gif",
-        "website": "https://www.instagram.com/kiko.demon"
+        "website": "https://www.instagram.com/kiko.demon",
+        "cantip": true
     },
     
     {
@@ -25,8 +27,22 @@
         "actions": "",
         "information" : "",
         "url": "https://play4usnow.s3.amazonaws.com/Vega-Bonita.gif",
-        "website": "https://www.instagram.com/missvegabonita/"
+        "website": "https://www.instagram.com/missvegabonita/",
+        "cantip": true
     }
+    ,
+    
+    {
+        "artist_name": "Elle Peril",
+        "service": "Host",
+        "actions": "",
+        "information" : "",
+        "url": "https://play4usnow.s3.amazonaws.com/lena.gif",
+        "website": "https://www.instagram.com/elleperil/",
+        "cantip": false
+    }
+
+    
     
   
 ]
