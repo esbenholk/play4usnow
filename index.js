@@ -240,6 +240,33 @@ app.get("/data", (req, res) => {
 });
 
 
+app.get("/userdetails", (req, res) => {
+
+    res.render("userdetails", {
+        layout: "main",
+    
+    });
+
+});
+app.post("/userdetails", (req, res) => {
+  console.log("userdetails", req.body.name);
+
+  databaseActions
+  .getUserDetails(req.body.name)
+  .then(result => {
+  console.log(result.rows[0].humanity_check);
+    res.render("userdetails", {
+      layout: "main",
+      user: result.rows[0]
+  });
+  
+  })
+  .catch(err => {
+    console.log("ups didnt insert sentence");
+  });
+
+});
+
 
 app.get("/countdown", (req, res)=>{
   databaseActions

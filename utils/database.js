@@ -12,6 +12,10 @@ module.exports.getEveryone = function getEveryone() {
   return database.query(`SELECT * FROM userdata`);
 };
 
+module.exports.getUserDetails= function getUserDetails(username) {
+  return database.query(`SELECT * FROM userdata WHERE username=$1`, [username]);
+};
+
 /////CREATING USERNAME AND ID
 module.exports.createUser = function createUser(username, age) {
   return database.query(
