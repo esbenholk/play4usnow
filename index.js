@@ -300,6 +300,20 @@ app.get("/countdown", (req, res)=>{
 }
 )
 
+app.get("/gif", (req, res)=>{
+    res.render("gif", {
+        layout: "main"
+  
+    });
+  }
+)
+app.get("/buyticket", (req, res)=>{
+  res.render("buyticket", {
+      layout: "main"
+
+  });
+}
+)
 app.post("/ajax", (req, res) => {
 
   let value = req.body.answer;
