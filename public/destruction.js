@@ -385,7 +385,7 @@ const s = (p) => {
               this.addRaindrop(col);
             }
           }
-          this.newRaindropTime = p.millis() + _.random(100, 300);
+          this.newRaindropTime = p.millis() + _.random(0.01, 2);
         }
       }
   
@@ -454,7 +454,7 @@ const s = (p) => {
          
           const maxChars = p.width / FONT_SIZE;
           if (quote.length < maxChars) {
-            this.cloud.setText(quote, 100, () => {
+            this.cloud.setText(quote, 2, () => {
               this.cloud.text = "";
               this.newWord = true;    
             });
