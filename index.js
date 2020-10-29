@@ -86,23 +86,51 @@ app.post("/robottest",  (req, res) => {
 });
 
 
-app.post("/turnon",  (req, res) => {
-  let turnon =req.body.answers
-    databaseActions
-    .registerTurnOn(turnon, req.cookies.id)
-    .then(result => {
-      res.render("frontpage", {
-        layout: "main",
-        name: result.rows[0].username, 
-        captcha: false,
-        performers: performers,
-        performers2: performers2
-      });
-    })
-    .catch(err => {
-      console.log(err);
+app.get("/destruction", (req, res) => {
+  databaseActions
+  .getEveryone()
+  .then(result => {
+
+    res.render("destruction", {
+        layout: "destruction",
+        users: result.rows
     });
+  
+  })
+  .catch(err => {
+    res.render("countdown", {
+      layout: "main"
+  });
+  });
+ 
+
 });
+app.get("/data", (req, res) => {
+  databaseActions
+  .getEveryone()
+  .then(result => {
+
+    res.render("datadisplay", {
+        layout: "destruction",
+        users: result.rows
+    });
+  
+  })
+  .catch(err => {
+    res.render("countdown", {
+      layout: "main"
+  });
+  });
+ 
+
+});
+app.get("/gif", (req, res)=>{
+  res.render("gif", {
+      layout: "main"
+
+  });
+}
+)
 
 app.post("/cookies",  (req, res) => {
   if (req.body.yes == "") {
@@ -200,44 +228,7 @@ app.get("/", (req, res) => {
  
 
 });
-app.get("/destruction", (req, res) => {
-  databaseActions
-  .getEveryone()
-  .then(result => {
 
-    res.render("destruction", {
-        layout: "destruction",
-        users: result.rows
-    });
-  
-  })
-  .catch(err => {
-    res.render("countdown", {
-      layout: "main"
-  });
-  });
- 
-
-});
-app.get("/data", (req, res) => {
-  databaseActions
-  .getEveryone()
-  .then(result => {
-
-    res.render("datadisplay", {
-        layout: "destruction",
-        users: result.rows
-    });
-  
-  })
-  .catch(err => {
-    res.render("countdown", {
-      layout: "main"
-  });
-  });
- 
-
-});
 
 
 app.get("/userdetails", (req, res) => {
@@ -300,13 +291,7 @@ app.get("/countdown", (req, res)=>{
 }
 )
 
-app.get("/gif", (req, res)=>{
-    res.render("gif", {
-        layout: "main"
-  
-    });
-  }
-)
+
 app.get("/buyticket", (req, res)=>{
   res.render("buyticket", {
       layout: "main"
