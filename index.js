@@ -249,20 +249,34 @@ app.get("/userdetails", (req, res) => {
 
 });
 app.post("/userdetails", (req, res) => {
-  console.log("userdetails", req.body.name);
+  
 
   databaseActions
   .getUserDetails(req.body.name)
   .then(result => {
-  console.log(result.rows[0].humanity_check);
-    res.render("userdetails", {
-      layout: "main",
-      user: result.rows[0]
-  });
+    if(result.rowCount === 0){
+      res.render("userdetails", {
+        layout: "main",
+        message : "no user details"
+    });
+
+    } else {
+      res.render("userdetails", {
+        layout: "main",
+        user: result.rows[0]
+    });
+
+    }
+  
   
   })
   .catch(err => {
-    console.log("ups didnt insert sentence");
+    console.log("does not have", result);
+
+    res.render("userdetails", {
+      layout: "main",
+      message : "no user details"
+  });
   });
 
 });
