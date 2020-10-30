@@ -731,7 +731,30 @@ function shuffle(array) {
 
 
 
-// function burn(){
-// 	document.getElementById("burning").style.opacity = 1;
-// }
-// setTimeout(burn, 5000);
+function burn(){
+
+
+
+  document.getElementById("one").style.height =  document.getElementById("one").height+10 + "px";
+  // document.getElementById("two").style.height = document.getElementById("two").height+20 + "px";
+  // document.getElementById("three").style.height = document.getElementById("three").height+25 + "px";
+  // document.getElementById("four").style.height = document.getElementById("foure").height+30 + "px";
+
+  if(document.getElementById("one").height > 800){
+    document.getElementById("goodbye").style.opacity = 1;
+    setTimeout(function(){
+      document.getElementById("goodbye").innerHTML = "<h1>Your Data, New Fetish</h1>"
+    }, 2000)
+    setTimeout(function(){
+      document.getElementById("goodbye").innerHTML = "<h1>PLAY 4 US NOW</h1>"
+    }, 6000)
+    setTimeout(function(){
+      document.getElementById("goodbye").innerHTML = "<p>bye bitch</p>"
+    }, 10000)
+  }
+  
+}
+
+
+setInterval(burn, 2000);
+
