@@ -4,7 +4,7 @@ for (let index = 0; index < all_access_ticketButtonTogglers.length; index++) {
   const element = all_access_ticketButtonTogglers[index];
   element.addEventListener("click", function(ev){
     console.log("click open all access", ev.target.parentNode);
-    ev.target.parentNode.children[2].style.display = "block";
+    ev.target.parentNode.children[1].style.display = "block";
   
   })
 }
