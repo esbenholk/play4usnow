@@ -80,7 +80,7 @@ function initPayPalButton(element) {
     onClick: function () {
   
       purchase_units[0].description = description.value;
-      purchase_units[0].amount.value = 8;
+      purchase_units[0].amount.value = 13;
 
 
 
@@ -96,7 +96,7 @@ function initPayPalButton(element) {
       return actions.order.capture().then(function (details) {
         alert('Transaction completed!');
 
-        updateUser(details, description.value, 8)
+        updateUser(details, description.value, 13)
         let tipcontainer = $(".ticketButton");
         for (let index = 0; index < tipcontainer.length; index++) {
           const element = tipcontainer[index];
