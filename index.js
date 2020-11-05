@@ -231,46 +231,46 @@ app.get("/", (req, res) => {
 
 
 
-app.get("/userdetails", (req, res) => {
+// app.get("/userdetails", (req, res) => {
 
-    res.render("userdetails", {
-        layout: "main",
+//     res.render("userdetails", {
+//         layout: "main",
     
-    });
+//     });
 
-});
-app.post("/userdetails", (req, res) => {
+// });
+// app.post("/userdetails", (req, res) => {
   
 
-  databaseActions
-  .getUserDetails(req.body.name)
-  .then(result => {
-    if(result.rowCount === 0){
-      res.render("userdetails", {
-        layout: "main",
-        message : "no user details"
-    });
+//   databaseActions
+//   .getUserDetails(req.body.name)
+//   .then(result => {
+//     if(result.rowCount === 0){
+//       res.render("userdetails", {
+//         layout: "main",
+//         message : "no user details"
+//     });
 
-    } else {
-      res.render("userdetails", {
-        layout: "main",
-        user: result.rows[0]
-    });
+//     } else {
+//       res.render("userdetails", {
+//         layout: "main",
+//         user: result.rows[0]
+//     });
 
-    }
+//     }
   
   
-  })
-  .catch(err => {
-    console.log("does not have", result);
+//   })
+//   .catch(err => {
+//     console.log("does not have", result);
 
-    res.render("userdetails", {
-      layout: "main",
-      message : "no user details"
-  });
-  });
+//     res.render("userdetails", {
+//       layout: "main",
+//       message : "no user details"
+//   });
+//   });
 
-});
+// });
 
 
 app.get("/countdown", (req, res)=>{
@@ -292,13 +292,13 @@ app.get("/countdown", (req, res)=>{
 )
 
 
-app.get("/buyticket", (req, res)=>{
-  res.render("buyticket", {
-      layout: "main"
+// app.get("/buyticket", (req, res)=>{
+//   res.render("buyticket", {
+//       layout: "main"
 
-  });
-}
-)
+//   });
+// }
+// )
 app.post("/ajax", (req, res) => {
 
   let value = req.body.answer;

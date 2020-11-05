@@ -31,7 +31,7 @@ const s = (p) => {
  
 
       canvas.id("mycanvas");
-      p.colorMode(p.HSB, 4, 100, 100, 100);  
+      p.colorMode(p.HSB, 360, 100, 100, 100);  
       p.textFont("monospace", FONT_SIZE);
       p.textAlign(p.LEFT, p.TOP);
   
@@ -202,7 +202,7 @@ const s = (p) => {
             this.life -= 1;
           }
   
-          if (this.life % 20 === 0 && _.random(true) > 0.9) {
+          if (this.life % 2 === 0 && _.random(true) > 0.9) {
             this.symbol = _.sample(SYMBOLS);    
           } 
           this.color = p.color(105, 100, this.life);
@@ -238,7 +238,7 @@ const s = (p) => {
         this.pos.add(p.createVector(0, 4));   
   
         const nextSymbolY = this.symbolCount * FONT_SIZE;
-        const middle = p.height / 3;
+        const middle = p.height /2 * 0.8;
         const { x, y } = this.pos;
         if (this.middleLetter) {
           if (y < middle && y > nextSymbolY) {
@@ -385,7 +385,7 @@ const s = (p) => {
               this.addRaindrop(col);
             }
           }
-          this.newRaindropTime = p.millis() + _.random(0.01, 2);
+          this.newRaindropTime = p.millis() + _.random(50, 100);
         }
       }
   
@@ -451,10 +451,10 @@ const s = (p) => {
         if (this.newWord) {
           const quote = getSentence();
           console.log("quote to be written", quote, sentences);
-         
+         //set time of sentence on screen (200)
           const maxChars = p.width / FONT_SIZE;
           if (quote.length < maxChars) {
-            this.cloud.setText(quote, 2, () => {
+            this.cloud.setText(quote, 200, () => {
               this.cloud.text = "";
               this.newWord = true;    
             });
@@ -488,7 +488,7 @@ const s = (p) => {
       }
   
       setup() {
-        this.cloud.setText("THE MATRIX", 300, () => this.isDone = true);
+        this.cloud.setText("THE MATRIX", 0, () => this.isDone = true);
       }
   
       draw() {
@@ -506,7 +506,7 @@ const s = (p) => {
         p.pop();
   
         if (this.move <= 1) {
-          this.move += 0.0015;
+          this.move += 0.01;
         }
       }
     }
