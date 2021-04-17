@@ -1,6 +1,6 @@
 var spicedPg = require("spiced-pg");
 var database = spicedPg(
-  process.env.DATABASE_URL ||
+  process.env.DATABASE_URL  ||
     "postgres:postgres:postgres@localhost:5432/userdata"
 );
 
